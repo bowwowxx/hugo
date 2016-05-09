@@ -179,8 +179,8 @@ SectionPagesMenu = "Main"
 
         [[Params.Cells.List]]
 
-            name = "Locked.."
-            link = "#!"
+            name = "Unboxing"
+            link = "/unboxing/"
             image = "/img/jars.jpg"
 
         [[Params.Cells.List]]
