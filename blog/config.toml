@@ -1,5 +1,5 @@
 # Site settings (baseurl must end with a trailing slash!)
-baseurl = "https://bowwowxx.github.io/hugoblog"
+baseurl = "http://bowwow.tips"
 languageCode = "en-us"
 title = "安迪兒隨手貼"
 theme = "grid-side"
@@ -12,7 +12,7 @@ copyright = "Copyright &#169; by 安迪兒"
 # not locally when run with `hugo server`; as with standard Hugo disqus,
 # you can specify disqus_identifier, disqus_title, and disqus_url in the
 # front matter of specific content.
-#disqusShortname = "yourDisqusShortname"
+disqusShortname = "bowwowtips"
 
 # The theme supports menus with up to one submenu per menu item
 # The menu name must be "Main"
@@ -136,7 +136,7 @@ SectionPagesMenu = "Main"
             name = "Posts"
 
             # The link to associate with the cell, used when clicked
-            link = "/post/"
+            link = "post/"
 
             # The image to use as a background-image for the cell
             image = "/img/car.jpg"
@@ -168,25 +168,25 @@ SectionPagesMenu = "Main"
         [[Params.Cells.List]]
 
             name = "Gallery"
-            link = "/gallery/"
+            link = "gallery/"
             image = "/img/cup.jpg"
 
         [[Params.Cells.List]]
 
             name = "Projects"
-            link = "/project/"
+            link = "project/"
             image = "/img/drone.jpg"
 
         [[Params.Cells.List]]
 
             name = "Unboxing"
-            link = "/unboxing/"
+            link = "unboxing/"
             image = "/img/jars.jpg"
 
         [[Params.Cells.List]]
 
             name = "Food"
-            link = "/food/"
+            link = "food/"
             image = "/img/food.jpg"
 
         [[Params.Cells.List]]
