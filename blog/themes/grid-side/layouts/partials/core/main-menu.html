@@ -26,7 +26,7 @@
                             {{ end }}
                         </ul>
                     {{ else }}
-                        <a href="{{ $baseUrl }}{{ .URL }}">
+                        <a href="{{ .URL }}">
                             {{ .Pre }}
                             <span>{{ .Name }}</span>
                         </a>
@@ -56,4 +56,3 @@
 </nav>
 
 {{ partial "core/search-lightbox.html" . }}
-
