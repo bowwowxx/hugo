@@ -13,7 +13,7 @@ copyright = "Copyright &#169; by 安迪兒"
 # you can specify disqus_identifier, disqus_title, and disqus_url in the
 # front matter of specific content.
 disqusShortname = "bowwowtips"
-
+googleAnalytics = "UA-78436139-1"
 # The theme supports menus with up to one submenu per menu item
 # The menu name must be "Main"
 SectionPagesMenu = "Main"
