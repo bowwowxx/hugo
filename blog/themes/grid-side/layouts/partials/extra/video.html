@@ -1,5 +1,6 @@
 {{ $baseUrl := .Site.BaseURL }}
-<video preload="auto" autoplay loop muted {{ with .Params.video_fallback }}poster="{{ $baseUrl }}{{ . }}"{{ end }} class="{{ .Scratch.Get "class" }}">
+<!-- muted-->
+<video preload="auto" autoplay loop onloadstart="this.volume=0.1" controls {{ with .Params.video_fallback }}poster="{{ $baseUrl }}{{ . }}"{{ end }} class="{{ .Scratch.Get "class" }}">
     {{ with .Params.video_webm }}
         <source src="{{ $baseUrl }}{{ . }}" type='video/webm; codecs="vp8.0, vorbis"'>
     {{ end }}
