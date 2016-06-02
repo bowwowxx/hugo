@@ -14,12 +14,13 @@ meta_keywords="2016 Computex,2016 台北國際電腦展,asus zenbo,健身、VR�
 2016的台北國際電腦展熱鬧登場了  
 安迪兒超愛這類的電腦展~XD  
 
-會場可以看到各家廠商無不費盡心力，使出所有招數  
-來展示新的成果，爭取國外的訂單  
-所以都會有很多新潮和有趣的東西    
+會場可以看到各家廠商無不費盡心力  
+使出所有招數，展示新的成果來爭取國外的訂單    
+所以都會有一些新潮和有趣的東西    
 
-因為今年是VR元年，大家都狂推VR的展示和應用  
-沖著這點，安迪兒當然一定要進去參觀增加見識      
+因為今年是VR元年  
+大家都狂推VR的展示和應用    
+安迪兒當然也不能放過，一定要進去參觀增見識的        
 
 國際電腦展的前幾天都是針對國外的廠商和商務客戶開放    
 最後一天會開放給一般民眾參觀  
@@ -28,6 +29,7 @@ meta_keywords="2016 Computex,2016 台北國際電腦展,asus zenbo,健身、VR�
 整個很熱鬧ＸＤ  
 
 安迪兒和同事們開心的來到另一個入口  
+
 <img src="https://goo.gl/fn7rRl" width="50%"><img src="https://goo.gl/C3ORK6" width="50%">
 
 剛開展就看到了這隻軟銀的機器人  
@@ -43,8 +45,12 @@ meta_keywords="2016 Computex,2016 台北國際電腦展,asus zenbo,健身、VR�
 (嘴角抖了一下…這，玩這麼大喔)  
 <img src="https://goo.gl/p7VHcN" width="70%">  
 
-旁邊是他們的模特兒，而且很特別的都是外國人  
-大家果然是一陣狂照(福利吶~~廠商成功吸睛了XD)   
+旁邊是他們家的模特兒  
+而且很特別的都是外國人
+
+大家果然是一陣狂照  
+(福利吶~~廠商成功吸睛了XD)  
+
 安迪兒照完相，覺的液態氮有點大瓶，所以還是閃遠點好了~XD  
 <img src="https://goo.gl/JBTqGX" width="70%">  
 
@@ -74,19 +80,22 @@ meta_keywords="2016 Computex,2016 台北國際電腦展,asus zenbo,健身、VR�
 <img src="https://goo.gl/hi5ja7" width="50%"><img src="https://goo.gl/UhOYgd" width="50%">  
 
 
-今年主題VR虛擬實境超熱的，看一下各家有趣的VR應用
+今年主題VR虛擬實境超熱的  
+看一下各家有趣的VR應用  
 
-Oculus 玩一下球類小遊戲  
+Oculus 玩一下球類小遊戲    
 <img src="https://goo.gl/QivOyn" width="50%"><img src="https://goo.gl/csNIVJ" width="50%">    
 
-HTC VIVE 這個蠻有趣的，弄個實境的籠子    
-在裡面玩VR好有氣氛，(有生死格鬥的fu~~XD)  
+HTC VIVE 這個蠻有趣的，弄個實境的籠子      
+在裡面玩VR好有氣氛  
+(有生死格鬥的fu~~XD)  
 <img src="https://goo.gl/BXSZB3" width="50%"><img src="https://goo.gl/WnkGiV" width="50%">
 <img src="https://goo.gl/ZfbLKF" width="50%"><img src="https://goo.gl/VGW3E8" width="50%">
 
 背包VR  
-HTV的VIVE VR因為有線的關係，所以難免會有點覺的有時會踩到  
-把主機放到背包裡玩，是個很好的點子，感覺受限制比較少  模擬一下登山、攀岩，加上背包的重量應該蠻有臨場感的  
+HTV的VIVE VR因為有線的關係，所以難免會有點覺的有時會踩到   
+把主機放到背包裡玩，是個很好的點子，感覺受限制比較少  
+模擬一下登山、攀岩，背上背包應該蠻有臨場感的   
 (可能主機不能太重就是了~XD)
 
 <img src="https://goo.gl/BKHD9W" width="50%">  
@@ -97,11 +106,11 @@ HTV的VIVE VR因為有線的關係，所以難免會有點覺的有時會踩到
 降落傘VR  
 這個有猛!!  
 感覺像是極限運動，直接把人上架模擬操控降落傘飛行  
-一般有點貴的飛行傘，也可以靠VR來體驗一下了    
+一般要玩又有點貴的飛行傘，這時也可以靠VR來體驗一下      
 <img src="https://goo.gl/ib7pME" width="50%"><img src="https://goo.gl/wxvS7g" width="50%">  
 
 QNAP NAS VR   
-這個也超猛的!!
+這個也超猛的!!  
 全場都是一般PC裝上VR  
 QNAP是把它弄到家用NAS上  
 還可以多成員使用  
@@ -126,12 +135,15 @@ World's First VR Ready NAS
  號稱一隻高階手機的價格(2萬內)  
  你家就有可愛的家庭機器人管家  
  (長相有點無辜呀)  
- 下午1點開始發表，1點不到舞台前就擠滿了人      
+
+ 下午1點開始發表  
+ 1點不到舞台前就擠滿了人      
 <img src="https://goo.gl/eMT3BX" width="50%"><img src="https://goo.gl/S699HY" width="50%">
 
 喔喔!出現了!  
 2位主持人模擬在家裡和Zenbo聊天  
 叫Zenbo開電視，開購物網站之類的  
+
 大家都拿起相機、錄影機狂拍  
 Zenbo可是比展場的模特兒們還紅吶  
 ~~XD  
@@ -143,37 +155,43 @@ Zenbo可是比展場的模特兒們還紅吶
 防水的手持裝置、透明螢幕的廣告箱子或販賣機、照貨物的裝置
 <img src="https://goo.gl/MgyFHe" width="50%"><img src="https://goo.gl/nR00OC" width="50%"><img src="https://goo.gl/UDKSxN" width="50%"><img src="https://goo.gl/ruHsTj" width="50%">  
 
-手機的空拍機、超寫實玩賽車多視角的螢幕、倉廚用搬貨的貨運機    
+手機的空拍機、超寫實賽車多視角的螢幕、倉庫搬貨用的搬運機     
 <img src="https://goo.gl/EpjGXG" width="50%"><img src="https://goo.gl/CAa1Ih" width="50%">
 <img src="https://goo.gl/hf3a7X" width="50%"><img src="https://goo.gl/4MpWlD" width="50%">
 <img src="https://goo.gl/VuKPrv" width="50%"><img src="https://goo.gl/0rDZFq" width="50%">  
 
-另外又看到一個有趣的產品asus的光碟機**ZenDrive**  
-這個光碟機很特別，除了隨身攜帶、木紋、**支援android**  
+另外又看到一個有趣的產品  
+asus的光碟機**ZenDrive**  
+
+這個光碟機很特別，除了隨身攜帶、木紋還**支援android**  
 也就是說他支援手機播放，超妙的~XD  
-對了!ZenDrive的上蓋打開裡面還可以放一片光碟片  
+
+ZenDrive的上蓋打開裡面還可以放一片光碟片  
 (愛好音樂，收集cd的人應該會很愛它吧!)    
 <img src="https://goo.gl/6Wexvo" width="50%"><img src="https://goo.gl/stGrMF" width="50%">  
 
-其它還有投影機、感測器、工研院UV LED殺菌的環保筷(這超受注目的)    
-Kickstarter上有名的辦公桌上魚菜共生系統「香草與魚」  
+其它還有投影機、感測器、工研院UV LED殺菌的環保筷(這超受注目的)
+
+Kickstarter上有名的辦公桌上魚菜共生系統「香草與魚」   
 醫療上使用看x光片的電腦…等等  
 <img src="https://goo.gl/ngynIn" width="50%"><img src="https://goo.gl/utnk7z" width="50%">
 <img src="https://goo.gl/I5kVgD" width="50%"><img src="https://goo.gl/2VYgXg" width="50%">
 <img src="https://goo.gl/0AFV5R" width="50%"><img src="https://goo.gl/yMREbU" width="50%">  
 
-另外還有老牌高級機殼場商**聯力**打造的電腦桌  
-他真的是**電腦桌**，整個電腦放在桌子裡，桌面上是透明玻璃  
-桌子本身有自動升降的調整，整個就是超高級又方便的  
+另外還有老牌機殼廠商**聯力**打造的電腦桌  
+他真的是**電腦桌**  
+整個電腦放在桌子裡，桌面上是透明玻璃   
+桌子本身有自動升降的調整，外觀超高級又大方    
 <img src="https://goo.gl/XdmwHw" width="50%"><img src="https://goo.gl/i1cfAM" width="50%">  
 
-安迪兒還有去試了一下邊寫程式邊踏飛輪的椅子  
+安迪兒還有去試一下邊寫程式邊踏飛輪的椅子    
 還真是不錯，感覺寫程式有靈感~XD  
 <img src="https://goo.gl/XLTx8m" width="50%"><img src="https://goo.gl/Rrx3m2" width="50%">  
 
-有一位老外Maker做了一台遙控推土機，還可以投球  
-用xbox的控制器遙控  
-同事大竹很開心的上去和那位老外玩了好一陣子  
+有一位老外Maker做了一台遙控推土機  
+可以投球，用xbox的控制器遙控  
+
+同事大竹很開心的上去和那位老外玩了好一陣子    
 (很熱情的老外Maker喔^^)  
 <img src="https://goo.gl/qiZF6T" width="50%"><img src="https://goo.gl/UCrEe5" width="50%">
 <img src="https://goo.gl/OpnlLB" width="50%"><img src="https://goo.gl/b00FVS" width="50%">  
@@ -221,8 +239,9 @@ Benq結合物聯網雲端健身的概念
 
 <img src="https://goo.gl/OUP3SL" width="50%">
 
-這次的**2016 Computex**展覽，安迪兒逛的超開心的  
-看到很多有趣的東西，也試玩了不少東西  
+這次的**2016 Computex**展覽  
+安迪兒逛的超開心的    
+看到很多有趣的東西，也試玩了不少東西    
 今年熱門的VR、四軸也都好好的玩了一輪  
 真是賺到了~XD
 
