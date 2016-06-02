@@ -54,9 +54,9 @@ meta_keywords="2016 Computex,2016 台北國際電腦展,asus zenbo,健身、VR�
 安迪兒照完相，覺的液態氮有點大瓶，所以還是閃遠點好了~XD  
 <img src="https://goo.gl/JBTqGX" width="70%">  
 
-另外會場中看到一堆改裝超漂亮的電腦  
+展示會場中也看到一堆改裝超漂亮的電腦  
 水冷、雙顯卡、多色led燈、拉拉熊、鋼彈造型  
-整個造型超酷炫的      
+整個造型超酷炫的  
 好讚吶~~  
 <img src="https://goo.gl/w7xNjN" width="50%"><img src="https://goo.gl/gzTMtN" width="50%">  
 <img src="https://goo.gl/90B3Ti" width="50%"><img src="https://goo.gl/rC5Uyt" width="50%">
@@ -65,7 +65,7 @@ meta_keywords="2016 Computex,2016 台北國際電腦展,asus zenbo,健身、VR�
 <img src="https://goo.gl/QgDI5n" width="50%"><img src="https://goo.gl/Chn7tz" width="50%">
 
 
-不忘貼一下 廠商們水水的模特兒~XD  
+不忘貼一下廠商們水水的**模特兒**~XD  
 
 <img src="https://goo.gl/dYPcpR" width="50%"><img src="https://goo.gl/swuOF4" width="50%">
 <img src="https://goo.gl/6il5UR" width="50%"><img src="https://goo.gl/DKvdRB" width="50%">  
@@ -80,19 +80,19 @@ meta_keywords="2016 Computex,2016 台北國際電腦展,asus zenbo,健身、VR�
 <img src="https://goo.gl/hi5ja7" width="50%"><img src="https://goo.gl/UhOYgd" width="50%">  
 
 
-今年主題VR虛擬實境超熱的  
-看一下各家有趣的VR應用  
-
-Oculus 玩一下球類小遊戲    
+### 今年主題VR虛擬實境超熱的  
+看一下會場各家有趣的VR應用  
+#### Oculus 玩一下球類小遊戲    
 <img src="https://goo.gl/QivOyn" width="50%"><img src="https://goo.gl/csNIVJ" width="50%">    
 
-HTC VIVE 這個蠻有趣的，弄個實境的籠子      
+#### HTC VIVE 這個蠻有趣的  
+營造出射擊實境的籠子   
 在裡面玩VR好有氣氛  
 (有生死格鬥的fu~~XD)  
 <img src="https://goo.gl/BXSZB3" width="50%"><img src="https://goo.gl/WnkGiV" width="50%">
 <img src="https://goo.gl/ZfbLKF" width="50%"><img src="https://goo.gl/VGW3E8" width="50%">
 
-背包VR  
+#### 背包VR  
 HTV的VIVE VR因為有線的關係，所以難免會有點覺的有時會踩到   
 把主機放到背包裡玩，是個很好的點子，感覺受限制比較少  
 模擬一下登山、攀岩，背上背包應該蠻有臨場感的   
@@ -103,18 +103,20 @@ HTV的VIVE VR因為有線的關係，所以難免會有點覺的有時會踩到
 背上就變成外國VR背包客~好健康吶XD  
 <img src="https://goo.gl/U23qVb" width="50%"><img src="https://goo.gl/Fq4BPx" width="50%">
 
-降落傘VR  
+#### 降落傘VR  
 這個有猛!!  
-感覺像是極限運動，直接把人上架模擬操控降落傘飛行  
-一般要玩又有點貴的飛行傘，這時也可以靠VR來體驗一下      
+感覺像是極限運動  
+直接把人上架子，模擬操控降落傘飛行      
+一般要玩又有點貴的飛行傘，這時也可以靠VR來體驗一下        
 <img src="https://goo.gl/ib7pME" width="50%"><img src="https://goo.gl/wxvS7g" width="50%">  
 
-QNAP NAS VR   
+#### QNAP NAS VR   
 這個也超猛的!!  
+
 全場都是一般PC裝上VR  
 QNAP是把它弄到家用NAS上  
 還可以多成員使用  
-一邊看電影一邊玩VR      
+一邊看電影一邊玩VR     
 以後的應用應該指日可待~XD  
 
 剛好有人在採訪  
@@ -125,19 +127,20 @@ World's First VR Ready NAS
  <img src="https://goo.gl/wfVn8H" width="50%"><img src="https://goo.gl/TAOFHy" width="50%">   
 
  順便看了一下NAS旁邊的iot之類的東西  
- <img src="https://goo.gl/1TXOrI" width="50%"><img src="https://goo.gl/EtrUK6" width="50%">
+ <img src="https://goo.gl/1TXOrI" width="50%">
+ <img src="https://goo.gl/EtrUK6" width="50%">  
 
- nas和raspberry pi的一些小實驗  
+ **nas和raspberry pi的一些小實驗**   
  <img src="https://goo.gl/nVA61o" width="50%">   
 
  再來是今天另一個重點  
- ASUS要發表的Zenbo機器人  
+ ASUS在今天實機發表的**Zenbo機器人**    
  號稱一隻高階手機的價格(2萬內)  
- 你家就有可愛的家庭機器人管家  
+ 你家就有可愛的**家庭機器人管家**    
  (長相有點無辜呀)  
 
  下午1點開始發表  
- 1點不到舞台前就擠滿了人      
+ 12點多舞台前就擠滿了人      
 <img src="https://goo.gl/eMT3BX" width="50%"><img src="https://goo.gl/S699HY" width="50%">
 
 喔喔!出現了!  
@@ -152,10 +155,11 @@ Zenbo可是比展場的模特兒們還紅吶
 看完Zenbo，安迪兒跑去其它地方晃晃  
 看到的一些有趣的東西  
 
-防水的手持裝置、透明螢幕的廣告箱子或販賣機、照貨物的裝置
+防水的手持裝置、透明螢幕的廣告箱子  
+販賣機、高速照相的裝置  
 <img src="https://goo.gl/MgyFHe" width="50%"><img src="https://goo.gl/nR00OC" width="50%"><img src="https://goo.gl/UDKSxN" width="50%"><img src="https://goo.gl/ruHsTj" width="50%">  
 
-手機的空拍機、超寫實賽車多視角的螢幕、倉庫搬貨用的搬運機     
+手機的空拍機、多視角的賽車、倉庫搬貨用的智慧搬運機     
 <img src="https://goo.gl/EpjGXG" width="50%"><img src="https://goo.gl/CAa1Ih" width="50%">
 <img src="https://goo.gl/hf3a7X" width="50%"><img src="https://goo.gl/4MpWlD" width="50%">
 <img src="https://goo.gl/VuKPrv" width="50%"><img src="https://goo.gl/0rDZFq" width="50%">  
@@ -214,11 +218,12 @@ Benq結合物聯網雲端健身的概念
 然後說**「要踏一小時喔!!!」**  
 (安迪兒聽到這，車輪調更輕了~~~XD)     
 
-最後教練嚇完我們之後，和我們說一點會有比賽，**「到時來比賽吧!」**  
-(落跑)    
+最後教練嚇完我們之後，和我們說一點會有比賽  
+**「到時來比賽吧!」**  
+(馬上落跑XD)    
 
 一起連線運動的過程還蠻有趣的      
-在家裡面如果也能有這樣的備配，就太美好了~xd  
+在家裡面如果也能有這樣的備配，就太完美了!      
 
 <img src="https://goo.gl/hsLE7I" width="50%"><img src="https://goo.gl/5aiWoH" width="50%">
 <img src="https://goo.gl/OwtlAJ" width="50%"><img src="https://goo.gl/P2azkt" width="50%">  
@@ -235,14 +240,16 @@ Benq結合物聯網雲端健身的概念
 <img src="https://goo.gl/UuNl1t" width="50%"><img src="https://goo.gl/S7g0NQ" width="50%">  
 
 
-最後試玩的差不多了，安迪兒一群人心滿意足的要離開嘍   
+最後試玩的差不多了  
+安迪兒一群人心滿意足的要離開嘍!  
 
 <img src="https://goo.gl/OUP3SL" width="50%">
 
+#### 結論:
 這次的**2016 Computex**展覽  
 安迪兒逛的超開心的    
 看到很多有趣的東西，也試玩了不少東西    
 今年熱門的VR、四軸也都好好的玩了一輪  
 真是賺到了~XD
 
-以上~一起期待明年2017的展出嘍。
+#### 一起期待明年2017的展出吧  
