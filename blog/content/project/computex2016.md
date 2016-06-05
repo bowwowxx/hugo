@@ -152,8 +152,14 @@ Zenbo可是比展場的模特兒們還紅吶
 ~~XD  
 <img src="https://goo.gl/IHXXMP" width="50%"><img src="https://goo.gl/9zEu2L" width="50%"><img src="https://goo.gl/nbpLlZ" width="50%"><img src="https://goo.gl/GVpqEE" width="50%">  
 
+<iframe width="420" height="315" src="https://www.youtube.com/embed/rMcKexy2cO0" frameborder="0" allowfullscreen></iframe>    
+
 看完Zenbo，安迪兒跑去其它地方晃晃  
 看到的一些有趣的東西  
+
+安迪兒蠻歡這個Vive音樂VR  
+這個老外正在配各種有趣的音樂~XD    
+<iframe width="420" height="315" src="https://www.youtube.com/embed/yy5fIYSkX8k" frameborder="0" allowfullscreen></iframe>  
 
 防水的手持裝置、透明螢幕的廣告箱子  
 販賣機、高速照相的裝置  
