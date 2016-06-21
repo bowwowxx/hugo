@@ -4,7 +4,7 @@ date = "2016-06-15"
 weight = -1
 categories = [ "nas" ]
 tags = [ "ipad,nas,遠端工作" ]
-image = "https://goo.gl/oBlkyK"
+image = "goo.gl/oBlkyK"
 meta_description="結合NAS把IPAD Air2當小電腦使用"
 meta_keywords="結合NAS把IPAD Air2當小電腦使用,ipad remote nas windows,ipad Splashtop chrome remote"
 +++
