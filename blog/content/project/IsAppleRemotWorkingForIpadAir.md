@@ -29,7 +29,7 @@ https://goo.gl/07ZWOM
 <img src="https://goo.gl/lT73Bi" width="50%">  
 
 #### 設定一下windows10  
-裝完後可以先使用安裝時設定的vnc網頁連線進去
+裝完後可以先使用安裝時設定的vnc網頁連線進去  
 <img src="https://goo.gl/NYQsvg" width="50%">  
 <img src="https://goo.gl/zaGvSD" width="50%">  
 

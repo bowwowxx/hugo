@@ -9,7 +9,9 @@
 {{ $title := .Title }}
 {{ $summary := .Summary }}
 {{ $link := .Permalink }}
-<!-- TODO: Figure out why line height causes issues here -->
+<!-- TODO: Figure out why line height causes issues here
+<img src="{{ $baseUrl }}{{ $image }}" class="fill-container-width rounded-corners-top" />
+-->
 <div class="flex-item flex-item-spacing no-line-height">
     <div class="relative lazyload" data-noscript="">
         <noscript>
@@ -20,7 +22,7 @@
                             {{ .Scratch.Set "class" "rounded-corners-top fill-container-width" }}
                             {{ partial "extra/video.html" . }}
                         {{ else }}
-                            <img src="{{ $baseUrl }}{{ $image }}" class="fill-container-width rounded-corners-top" />
+                            <img src="{{ $image }}" class="fill-container-width rounded-corners-top" />
                         {{ end }}
                     </div>
                     <div class="rounded-corners-bottom center-text project-container-title">
