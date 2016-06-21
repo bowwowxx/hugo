@@ -68,8 +68,8 @@ splashtop、teamviewer、chrome remote desktop、微軟原生的Remote Desktop
 <img src="https://goo.gl/THlDL2" width="50%">
 
 
-因為在NAS上，其實win10其實也不用理會它  
-不用關機，放都就可以了  
+因為在NAS上，其實win10不用理會它  
+不用特別關機，放著就可以了  
 在家或在外面IPAD隨時透過連線  
 就馬上連回來使用了    
 
