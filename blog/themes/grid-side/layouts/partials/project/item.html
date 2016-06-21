@@ -5,7 +5,7 @@
 {{ else }}
     {{ $.Scratch.Set "image" "/img/placeholder.jpg" }}
 {{ end }}
-{{ $image := $.Scratch.Get "image" | urlize }}
+{{ $image := $.Scratch.Get "image"}}
 {{ $title := .Title }}
 {{ $summary := .Summary }}
 {{ $link := .Permalink }}
