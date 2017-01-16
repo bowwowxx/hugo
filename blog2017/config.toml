@@ -1,0 +1,29 @@
+baseurl = "http://1.163.246.94/"
+theme = "cocoa-eh-hugo-theme"
+builddrafts = true
+canonifyurls = true
+contentdir = "content"
+languageCode = "en-US"
+layoutdir = "layouts"
+publishdir = "public"
+author = "Copyright &#169; by 安迪兒"
+title = "安迪兒隨手貼"
+disqusshortname = "bowwowtips"
+googleAnalytics = "UA-78436139-1"
+pluralizelisttitles = false
+
+[permalinks]
+post = "blog/:slug/"
+
+[params]
+dateform = "Jan 2, 2006"
+dateformfull = "Mon Jan 2 2006 15:04:05 MST"
+description = "安迪兒隨手貼"
+logofile = "img/logo.png"
+faviconfile = "img/logo.png"
+highlightjs = true
+lang = "en"
+github = "https://github.com/bowwowxx"
+email = "jummykimo@gmail.com"
+linkedin = "#"
+twitter = "#"
