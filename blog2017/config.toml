@@ -1,4 +1,4 @@
-baseurl = "http://1.163.35.154/"
+baseurl = "http://bowwow.tips"
 theme = "cocoa-eh-hugo-theme"
 builddrafts = true
 canonifyurls = true
@@ -13,7 +13,7 @@ pluralizelisttitles = false
 googleAnalytics = "UA-78436139-1"
 
 [permalinks]
-post = "post/:slug/"
+#post = "post/:slug/"
 
 [params]
 dateform = "Jan 2, 2006"
