@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on 安迪兒隨手貼</title>
-    <link>/127.0.0.1/projects/index.xml</link>
+    <link>https://bowwow.tips/projects/index.xml</link>
     <description>Recent content in Projects on 安迪兒隨手貼</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Wed, 15 Jun 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/127.0.0.1/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://bowwow.tips/projects/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>在NAS上把IPAD Air2當小電腦</title>
-      <link>/127.0.0.1/projects/IsAppleRemotWorkingForIpadAir/</link>
+      <link>https://bowwow.tips/projects/IsAppleRemotWorkingForIpadAir/</link>
       <pubDate>Wed, 15 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/projects/IsAppleRemotWorkingForIpadAir/</guid>
+      <guid>https://bowwow.tips/projects/IsAppleRemotWorkingForIpadAir/</guid>
       <description>
 
 &lt;p&gt;有時候出門在外，或是在客廰，其實會有點懶的拿筆電&lt;br /&gt;
@@ -101,10 +101,10 @@ splashtop、teamviewer、chrome remote desktop、微軟原生的Remote Desktop&l
     <item>
       <title>2016 Computex 直擊
 (台北國際電腦展)</title>
-      <link>/127.0.0.1/projects/computex2016/</link>
+      <link>https://bowwow.tips/projects/computex2016/</link>
       <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/projects/computex2016/</guid>
+      <guid>https://bowwow.tips/projects/computex2016/</guid>
       <description>
 
 &lt;p&gt;日期：5/31（二）至 6/4（六）&lt;br /&gt;
@@ -367,10 +367,10 @@ Benq結合物聯網雲端健身的概念&lt;/p&gt;
     
     <item>
       <title>[開箱]輕鬆在家歡唱ktv，擁有Ubuntu雙系統的QNAP TS-253A NAS</title>
-      <link>/127.0.0.1/projects/20160430/</link>
+      <link>https://bowwow.tips/projects/20160430/</link>
       <pubDate>Sat, 30 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/projects/20160430/</guid>
+      <guid>https://bowwow.tips/projects/20160430/</guid>
       <description>&lt;p&gt;&lt;strong&gt;「什麼?NAS唱KTV?」&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;「哇嗚!Ubuntu雙系統&lt;/strong&gt;」&lt;/p&gt;

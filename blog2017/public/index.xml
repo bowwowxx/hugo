@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>安迪兒隨手貼</title>
-    <link>/127.0.0.1/index.xml</link>
+    <link>https://bowwow.tips/index.xml</link>
     <description>Recent content on 安迪兒隨手貼</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sat, 30 Jul 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/127.0.0.1/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://bowwow.tips/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Docker 1.12的黑魔法</title>
-      <link>/127.0.0.1/post/20160730/</link>
+      <link>https://bowwow.tips/post/20160730/</link>
       <pubDate>Sat, 30 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/post/20160730/</guid>
+      <guid>https://bowwow.tips/post/20160730/</guid>
       <description>
 
 &lt;p&gt;今年2016 Docker Conf 發表後&lt;br /&gt;
@@ -271,10 +271,10 @@ docker deploy elk
     
     <item>
       <title>在NAS上把IPAD Air2當小電腦</title>
-      <link>/127.0.0.1/projects/IsAppleRemotWorkingForIpadAir/</link>
+      <link>https://bowwow.tips/projects/IsAppleRemotWorkingForIpadAir/</link>
       <pubDate>Wed, 15 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/projects/IsAppleRemotWorkingForIpadAir/</guid>
+      <guid>https://bowwow.tips/projects/IsAppleRemotWorkingForIpadAir/</guid>
       <description>
 
 &lt;p&gt;有時候出門在外，或是在客廰，其實會有點懶的拿筆電&lt;br /&gt;
@@ -360,10 +360,10 @@ splashtop、teamviewer、chrome remote desktop、微軟原生的Remote Desktop&l
     
     <item>
       <title>微軟windows10更新擁抱linux系統-win10 ubuntu shell</title>
-      <link>/127.0.0.1/post/20160610/</link>
+      <link>https://bowwow.tips/post/20160610/</link>
       <pubDate>Tue, 14 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/post/20160610/</guid>
+      <guid>https://bowwow.tips/post/20160610/</guid>
       <description>
 
 &lt;p&gt;微軟在今年3月Build 2016開發者大會，拋出了一個震撼彈&lt;br /&gt;
@@ -421,10 +421,10 @@ Link:&lt;br /&gt;
     
     <item>
       <title>免費開啟MAC正常讀寫入NTFS磁碟</title>
-      <link>/127.0.0.1/post/20160608/</link>
+      <link>https://bowwow.tips/post/20160608/</link>
       <pubDate>Mon, 13 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/post/20160608/</guid>
+      <guid>https://bowwow.tips/post/20160608/</guid>
       <description>
 
 &lt;h2 id=&#34;為啥隨身碟寫不進去&#34;&gt;為啥隨身碟寫不進去!&lt;/h2&gt;
@@ -492,10 +492,10 @@ Link:&lt;br /&gt;
     
     <item>
       <title>刪掉惱人的Mac .DS_Store文件</title>
-      <link>/127.0.0.1/post/20160607/</link>
+      <link>https://bowwow.tips/post/20160607/</link>
       <pubDate>Tue, 07 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/post/20160607/</guid>
+      <guid>https://bowwow.tips/post/20160607/</guid>
       <description>
 
 &lt;p&gt;使用mac筆電的，應該都有個切身之痛&lt;br /&gt;
@@ -536,10 +536,10 @@ Windows上的&lt;strong&gt;desktop.ini&lt;/strong&gt;&lt;/p&gt;
     
     <item>
       <title>修改Ubuntu ulimit限制</title>
-      <link>/127.0.0.1/post/20160604/</link>
+      <link>https://bowwow.tips/post/20160604/</link>
       <pubDate>Sat, 04 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/post/20160604/</guid>
+      <guid>https://bowwow.tips/post/20160604/</guid>
       <description>
 
 &lt;p&gt;安迪兒最近在壓測時碰上了&lt;br /&gt;
@@ -630,10 +630,10 @@ ulimit -n 65536
     
     <item>
       <title>匯入匯出MongoDB資料成JSON CSV檔案</title>
-      <link>/127.0.0.1/post/20160601/</link>
+      <link>https://bowwow.tips/post/20160601/</link>
       <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/post/20160601/</guid>
+      <guid>https://bowwow.tips/post/20160601/</guid>
       <description>
 
 &lt;p&gt;前陣子安迪兒剛好碰到要匯出mongodb資料&lt;br /&gt;
@@ -712,10 +712,10 @@ mongorestore -h localhost -u xx -p x -d metadata --collection test ./dump/metada
     <item>
       <title>2016 Computex 直擊
 (台北國際電腦展)</title>
-      <link>/127.0.0.1/projects/computex2016/</link>
+      <link>https://bowwow.tips/projects/computex2016/</link>
       <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/projects/computex2016/</guid>
+      <guid>https://bowwow.tips/projects/computex2016/</guid>
       <description>
 
 &lt;p&gt;日期：5/31（二）至 6/4（六）&lt;br /&gt;
@@ -978,10 +978,10 @@ Benq結合物聯網雲端健身的概念&lt;/p&gt;
     
     <item>
       <title>關於MongoDB設定權限</title>
-      <link>/127.0.0.1/post/20160531/</link>
+      <link>https://bowwow.tips/post/20160531/</link>
       <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/post/20160531/</guid>
+      <guid>https://bowwow.tips/post/20160531/</guid>
       <description>&lt;p&gt;大家在使用MongoDB，裝完預設其實是沒設定權限的&lt;br /&gt;
 因為MongoDB預設你不會對外開放&lt;br /&gt;
 一般是會鎖定只給api的機器讀取資料&lt;br /&gt;
@@ -1056,10 +1056,10 @@ root &amp;gt; 最高權限
     
     <item>
       <title>PostgreSQL的備份與復原</title>
-      <link>/127.0.0.1/post/20160530/</link>
+      <link>https://bowwow.tips/post/20160530/</link>
       <pubDate>Mon, 30 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/post/20160530/</guid>
+      <guid>https://bowwow.tips/post/20160530/</guid>
       <description>&lt;p&gt;安迪兒最較常用到PostgreSQL備資料倒資料&lt;br /&gt;
 記錄一下操作的方式&lt;/p&gt;
 
@@ -1117,10 +1117,10 @@ hostname:port:database:username:password
     
     <item>
       <title>Qnap nas掛上遠端Synology磁碟資料</title>
-      <link>/127.0.0.1/post/20160518/</link>
+      <link>https://bowwow.tips/post/20160518/</link>
       <pubDate>Wed, 18 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/post/20160518/</guid>
+      <guid>https://bowwow.tips/post/20160518/</guid>
       <description>
 
 &lt;p&gt;安迪兒新的qnap NAS剛整理完所有資料，&lt;br /&gt;
@@ -1207,10 +1207,10 @@ umount.cifs /mnt/smb
     
     <item>
       <title>拯救synology nas上raid1內接硬碟資料</title>
-      <link>/127.0.0.1/post/20160513/</link>
+      <link>https://bowwow.tips/post/20160513/</link>
       <pubDate>Fri, 13 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/post/20160513/</guid>
+      <guid>https://bowwow.tips/post/20160513/</guid>
       <description>&lt;p&gt;有用nas的，早晚會碰到nas壞了或是啥不可預測的神之力&lt;br /&gt;
 總之nas裡的硬碟多多少少會有機會碰到要外接讀取資料的機會&lt;/p&gt;
 
@@ -1300,10 +1300,10 @@ mdadm -S /dev/md2
     
     <item>
       <title>MAC上 /dev/disk 與 /dev/rdisk 的差別 (解決 dd 過慢的問題)</title>
-      <link>/127.0.0.1/post/20160512/</link>
+      <link>https://bowwow.tips/post/20160512/</link>
       <pubDate>Thu, 12 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/post/20160512/</guid>
+      <guid>https://bowwow.tips/post/20160512/</guid>
       <description>&lt;p&gt;如果各位有在玩Raspberry pi或banana pi之類的東西&lt;br /&gt;
 應該常常會用到讀寫img吧&lt;br /&gt;
 一般要把映象檔整塊燒到sd卡裡面都用到&lt;br /&gt;
@@ -1339,10 +1339,10 @@ dd if=/dev/disk2 | gzip &amp;gt; /xxx/path/disk2.img.gz
     
     <item>
       <title>[開箱]輕鬆在家歡唱ktv，擁有Ubuntu雙系統的QNAP TS-253A NAS</title>
-      <link>/127.0.0.1/projects/20160430/</link>
+      <link>https://bowwow.tips/projects/20160430/</link>
       <pubDate>Sat, 30 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/projects/20160430/</guid>
+      <guid>https://bowwow.tips/projects/20160430/</guid>
       <description>&lt;p&gt;&lt;strong&gt;「什麼?NAS唱KTV?」&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;「哇嗚!Ubuntu雙系統&lt;/strong&gt;」&lt;/p&gt;
@@ -1603,10 +1603,10 @@ RAM:16g 無誤!(開心吶)&lt;br /&gt;
     
     <item>
       <title>How To Install Elasticsearch on Ubuntu 14.04</title>
-      <link>/127.0.0.1/post/20160101/</link>
+      <link>https://bowwow.tips/post/20160101/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>/127.0.0.1/post/20160101/</guid>
+      <guid>https://bowwow.tips/post/20160101/</guid>
       <description>
 
 &lt;p&gt;最近測東西，都用整理好的docker Elasticsearch叢集&lt;br /&gt;
