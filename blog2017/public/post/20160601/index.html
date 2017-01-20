@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="安迪兒隨手貼">
+<meta name="description" content="匯入匯出MongoDB資料成JSON CSV檔案">
+
+<base href="127.0.0.1/127.0.0.1/">
+<title>
+
+
+     安迪兒隨手貼 - 匯入匯出MongoDB資料成JSON CSV檔案 
+
+</title>
+<link rel="canonical" href="127.0.0.1/127.0.0.1/post/20160601/">
+
+
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+
+
+<link rel="stylesheet" href="127.0.0.1/127.0.0.1/css/reset.css">
+<link rel="stylesheet" href="127.0.0.1/127.0.0.1/css/main.css">
+
+
+
+
+<link rel="shortcut icon"
+
+    href="127.0.0.1/img/logo.png"
+
+>
+
+
+
+</head>
+
+
+<body lang="en">
+
+
+<section class="header">
+
+    <div class="container">
+        <a href="127.0.0.1/127.0.0.1/"><img class="logo" src="127.0.0.1/img/logo.png" alt="安迪兒隨手貼 Logo"/></a>
+        <div class="content">
+            <a href="127.0.0.1/127.0.0.1/"><div class="name"><h1>安迪兒隨手貼</h1></div></a>
+            <nav>
+                <ul>
+                    <a href="127.0.0.1/127.0.0.1/post/"><li>Post</li></a>
+                    
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                            <a href="projects"><li>projects</li></a>
+                            
+                        
+                    
+                    
+                        
+                            <a href="127.0.0.1/127.0.0.1/about/"><li>About</li></a>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="https://github.com/bowwowxx" target="_blank">
+                <i class="icon ion-social-github"></i>
+            </a>
+        
+
+        
+            <a href="#" target="_blank">
+                <i class="icon ion-social-twitter"></i>
+            </a>
+        
+
+        
+            <a href="#" target="_blank">
+                <i class="icon ion-social-linkedin"></i>
+            </a>
+        
+
+        
+            <a href="mailto:jummykimo@gmail.com">
+                <i class="icon ion-ios-email larger"></i>
+            </a>
+        
+
+        
+            <a href="127.0.0.1/index.xml">
+                <i class="icon ion-social-rss larger"></i>
+            </a>
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    匯入匯出MongoDB資料成JSON CSV檔案
+
+</div>
+
+                </div>
+                <div class="meta">
+                    <div class="date" title="Wed Jun 1 2016 00:00:00 UTC">Jun 1, 2016</div>
+                    <div class="reading-time"><div class="middot"></div>1 minute read</div>
+                </div>
+            </div>
+            <div class="markdown">
+                
+
+<p>前陣子安迪兒剛好碰到要匯出mongodb資料<br />
+需要轉csv給其它人員使用<br />
+查了一下，發現mongodb直接有支援資料匯出成json、csv格式<br />
+(超強XD)</p>
+
+<p><strong>兩者的區別：</strong><br />
+- JSON 是 mongoexport 默認的匯出格式，不需要指定</p>
+
+<ul>
+<li>CSV 格式需要明確指定欄位屬性名<br /></li>
+</ul>
+
+<p>一般大多使用json，特殊需求像是需要用到excel之類的文件編輯的，會比較偏向使用csv格式。<br />
+參考以下官方文件</p>
+
+<p>[mongoexport]<br />
+<a href="https://docs.mongodb.com/master/reference/program/mongoexport">https://docs.mongodb.com/master/reference/program/mongoexport</a></p>
+
+<p>[mongoimport]<br />
+<a href="https://docs.mongodb.com/manual/reference/program/mongoimport/#use">https://docs.mongodb.com/manual/reference/program/mongoimport/#use</a></p>
+
+<p>安迪兒貼一下用的指令</p>
+
+<h3 id="匯出">匯出:</h3>
+
+<p><strong>mongodb collection指定欄位匯出資料轉csv</strong></p>
+
+<pre><code>mongoexport --host localhost --db xxdata --collection unknown_data --username xx --password xx --csv --out text.csv --fields _id,lang,pinyin,artists,phonetic,hash_code,created_at,title,vocal_track,filename,hash_method,words
+</code></pre>
+
+<p><strong>mongodb collection資料匯出轉json</strong></p>
+
+<pre><code>mongoexport --host localhost -d xxdata -c unknown_songs -u xxuser -p xxpassword -o output.json
+
+</code></pre>
+
+<p><img src="https://goo.gl/FP6y0y" width="100%"></p>
+
+<h3 id="匯入">匯入:</h3>
+
+<p><strong>測試一下匯入</strong></p>
+
+<pre><code>mongoimport  --host localhost --db xxdata --collection test --username xx --password xx --type csv --headerline --file ./text.csv
+</code></pre>
+
+<p><img src="https://goo.gl/54DixU" width="100%"></p>
+
+<h4 id="附上mongo-db-dump-restore資料庫">附上mongo db dump &amp; restore資料庫</h4>
+
+<p>全部db dump&amp;restore</p>
+
+<pre><code>mongodump -h localhost -u xx -p xx -d metadata -o ./dump  
+
+mongorestore -h localhost -u xx -p xx -d metadata --directoryperdb ./dump  
+</code></pre>
+
+<p>單一collection回復</p>
+
+<pre><code>mongodump -h localhost -u xx -p xx -d metadata --collection unknown_songs  
+
+mongorestore -h localhost -u xx -p x -d metadata --collection test ./dump/metadata/unknown_songs.bson  
+</code></pre>
+
+<p><strong>一些參數</strong><br />
+- -h：mongo位址<br />
+- -d：db name<br />
+- &ndash;directoryperdb：dump的目錄<br />
+- &ndash;drop：restore時，先刪掉資料再恢復</p>
+
+<p>以上~~收工嘍!</p>
+
+                <br>
+                <p><a href="post">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'bowwowtips';
+    var disqus_identifier = '\/127.0.0.1\/post\/20160601\/';
+    var disqus_title = '匯入匯出MongoDB資料成JSON CSV檔案';
+    var disqus_url = '\/127.0.0.1\/post\/20160601\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            <br>
+            <div class="ga">
+            
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-78436139-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+</body>
+</html>
+

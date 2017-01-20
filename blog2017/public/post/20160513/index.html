@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="安迪兒隨手貼">
+<meta name="description" content="拯救synology nas上raid1內接硬碟資料">
+
+<base href="127.0.0.1/127.0.0.1/">
+<title>
+
+
+     安迪兒隨手貼 - 拯救synology nas上raid1內接硬碟資料 
+
+</title>
+<link rel="canonical" href="127.0.0.1/127.0.0.1/post/20160513/">
+
+
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+
+
+<link rel="stylesheet" href="127.0.0.1/127.0.0.1/css/reset.css">
+<link rel="stylesheet" href="127.0.0.1/127.0.0.1/css/main.css">
+
+
+
+
+<link rel="shortcut icon"
+
+    href="127.0.0.1/img/logo.png"
+
+>
+
+
+
+</head>
+
+
+<body lang="en">
+
+
+<section class="header">
+
+    <div class="container">
+        <a href="127.0.0.1/127.0.0.1/"><img class="logo" src="127.0.0.1/img/logo.png" alt="安迪兒隨手貼 Logo"/></a>
+        <div class="content">
+            <a href="127.0.0.1/127.0.0.1/"><div class="name"><h1>安迪兒隨手貼</h1></div></a>
+            <nav>
+                <ul>
+                    <a href="127.0.0.1/127.0.0.1/post/"><li>Post</li></a>
+                    
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                            <a href="projects"><li>projects</li></a>
+                            
+                        
+                    
+                    
+                        
+                            <a href="127.0.0.1/127.0.0.1/about/"><li>About</li></a>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="https://github.com/bowwowxx" target="_blank">
+                <i class="icon ion-social-github"></i>
+            </a>
+        
+
+        
+            <a href="#" target="_blank">
+                <i class="icon ion-social-twitter"></i>
+            </a>
+        
+
+        
+            <a href="#" target="_blank">
+                <i class="icon ion-social-linkedin"></i>
+            </a>
+        
+
+        
+            <a href="mailto:jummykimo@gmail.com">
+                <i class="icon ion-ios-email larger"></i>
+            </a>
+        
+
+        
+            <a href="127.0.0.1/index.xml">
+                <i class="icon ion-social-rss larger"></i>
+            </a>
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    拯救synology nas上raid1內接硬碟資料
+
+</div>
+
+                </div>
+                <div class="meta">
+                    <div class="date" title="Fri May 13 2016 00:00:00 UTC">May 13, 2016</div>
+                    <div class="reading-time"><div class="middot"></div>1 minute read</div>
+                </div>
+            </div>
+            <div class="markdown">
+                <p>有用nas的，早晚會碰到nas壞了或是啥不可預測的神之力<br />
+總之nas裡的硬碟多多少少會有機會碰到要外接讀取資料的機會</p>
+
+<p>安迪兒也不例外<br />
+某天安迪兒nas容量不夠，要買新的硬碟<br />
+因為安迪兒nas(ds213j)很慢<br />
+只有usb2傳輸，1g的網路，傳輸上限也只能到每秒30多MB<br />
+總之…備資料要超久的</p>
+
+<p>於是安迪兒把裡面的raid1拆一顆硬碟下來<br />
+拿到公司，想說外接公司nas把資料快速的備份出來<br />
+但…安迪兒天真的以為，raid1不就是2顆硬碟一模模一樣樣<br />
+隨便拿一顆接上硬碟外接盒，把裡面的檔案讀出來就好了。</p>
+
+<p>果然是事情沒想的那麼容易<br />
+硬碟外接後，不管接到電腦或nas都讀不到東西<br />
+最多只讀到加密的raid磁區</p>
+
+<p>安迪兒整個傻眼，深吸了一口氣<br />
+想著，那天…安迪兒的機器壞了，找不到同型號的
+…就gg了嗎!!!<br />
+(這太蝦了吧!!)</p>
+
+<p>於是安迪兒在茫茫google海裡，研究了一下<br />
+找到了可能的方案，利用linux software raid的方式<br />
+弄個raid來試試讀資料<br />
+參考資料如下:<br />
+<a href="http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-ig-s390-multi-zh_tw-4/s1-s390info-raid.html">http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-ig-s390-multi-zh_tw-4/s1-s390info-raid.html</a><br />
+<a href="https://en.wikipedia.org/wiki/Mdadm">https://en.wikipedia.org/wiki/Mdadm</a><br />
+<a href="http://linux.die.net/man/8/mdadm">http://linux.die.net/man/8/mdadm</a></p>
+
+<p>以下就是安迪兒整個修復的過程</p>
+
+<p>用usb外接盒裝上硬碟，接上公司的nas<br />
+<img src="https://goo.gl/W7Bcnv" ></p>
+
+<p>執行以下步驟</p>
+
+<p>1.修復原raid1 HDD<br />
+mdadm -A -R /dev/xxx /dev/xxx<br />
+<img src="https://goo.gl/1jtKCN" width="100%"></p>
+
+<p>2.fdisk -l xx 找一下相關磁碟資訊<br />
+可以看一下Blocks的大小，猜一下大的是存資的磁區<br />
+<img src="https://goo.gl/fyjJnT" width="100%"><br />
+<img src="https://goo.gl/cnRqA5" width="100%"></p>
+
+<p>3.建新目錄<br />
+mkdir /mnt/old_hdd<br />
+<img src="https://goo.gl/6SzuD4" width="100%"></p>
+
+<p>4.把找到的md2掛到剛建的目錄裡<br />
+mount -t ext4 /dev/md2 /mnt/old_hdd/<br />
+<img src="https://goo.gl/Fi8mbK" width="100%"><br />
+<img src="https://goo.gl/jyifaF" width="100%"></p>
+
+<p>5.開始copy資料吧，此時nas裡面應該讀的到資料了<br />
+<img src="https://goo.gl/Fi8mbK" width="100%"><br />
+<img src="https://goo.gl/qpM7pj" width="100%"></p>
+
+<p>6.完成後<br />
+unmount資料匣<br />
+removed md virtual device</p>
+
+<p>全部用到的指令如下:</p>
+
+<pre><code>fdisk -l
+mdadm -A -R /dev/md2 /dev/sde3
+mkdir /mnt/old_hdd
+mount -t ext4 /dev/md2 /mnt/old_hdd/
+mount | grep ^/dev/md2
+umount /mnt/old_hdd
+mdadm -S /dev/md2
+</code></pre>
+
+<p>到這邊…有沒發現一件事<br />
+其實所謂的raid，就是用software raid的方式弄的<br />
+如果是硬體晶片的話可能就解不出來了<br />
+有好有壞啦~XD</p>
+
+<p>另外，新的nas超快，用usb3，或是直接網路傳檔<br />
+每秒都有100mb以上的速度，真是差太多了。</p>
+
+<p>以上~~收工嘍!</p>
+
+                <br>
+                <p><a href="post">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'bowwowtips';
+    var disqus_identifier = '\/127.0.0.1\/post\/20160513\/';
+    var disqus_title = '拯救synology nas上raid1內接硬碟資料';
+    var disqus_url = '\/127.0.0.1\/post\/20160513\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            <br>
+            <div class="ga">
+            
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-78436139-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+</body>
+</html>
+

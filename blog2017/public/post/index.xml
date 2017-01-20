@@ -1,0 +1,1138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Post on 安迪兒隨手貼</title>
+    <link>/127.0.0.1/post/index.xml</link>
+    <description>Recent content in Post on 安迪兒隨手貼</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 30 Jul 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/127.0.0.1/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Docker 1.12的黑魔法</title>
+      <link>/127.0.0.1/post/20160730/</link>
+      <pubDate>Sat, 30 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/127.0.0.1/post/20160730/</guid>
+      <description>
+
+&lt;p&gt;今年2016 Docker Conf 發表後&lt;br /&gt;
+引起大家狂熱的討論，整個會場都高潮了~XD&lt;/p&gt;
+
+&lt;p&gt;[引用一下相關的結論文章]&lt;br /&gt;
+&lt;strong&gt;DockerCon 2016會議：發布內容的總結及主要收穫&lt;/strong&gt;
+原文網址：&lt;a href=&#34;https://kknews.cc/tech/mmx4yp.html&#34;&gt;https://kknews.cc/tech/mmx4yp.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Docker Swarm 已死！Docker Swarm 萬歲！&lt;/strong&gt;
+原文網址：&lt;a href=&#34;https://kknews.cc/tech/8e2egq.html&#34;&gt;https://kknews.cc/tech/8e2egq.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;官方無敵威的展示影片&#34;&gt;官方無敵威的展示影片&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=F7hoq0KwHD4&#34;&gt;&lt;img src=&#34;https://img.youtube.com/vi/F7hoq0KwHD4/0.jpg&#34; alt=&#34;Alt text&#34; /&gt;&lt;/a&gt;&lt;br /&gt;
+看完影片後，安迪兒超期待新版Docker1.12的發表&lt;br /&gt;
+等到了rc2，就迫不急待的試玩一下&lt;br /&gt;
+因為安迪兒想把舊式的swarm換成新的docker swarm&lt;br /&gt;
+就這樣一路從Docker1.12 rc2 rc3 rc4都玩了一遍&lt;br /&gt;
+(因為不少問題和bug，所以才會一直試到rc4 &amp;hellip;orz)&lt;/p&gt;
+
+&lt;p&gt;終於今天Docker v1.12.0正式定版&lt;br /&gt;
+Docker大大們開發的能量超強大&lt;br /&gt;
+每一版都更新很快，也修了一大堆東西~XD&lt;br /&gt;
+&lt;a href=&#34;https://github.com/docker/docker/releases&#34;&gt;https://github.com/docker/docker/releases&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;既然Docker v1.12定版了&lt;br /&gt;
+安迪兒也馬上全新安裝&lt;br /&gt;
+順便記錄一下和分享試用Docker 1.12的心得&lt;/p&gt;
+
+&lt;h4 id=&#34;這次的docker增加不少新功能&#34;&gt;[這次的docker增加不少新功能]&lt;/h4&gt;
+
+&lt;h4 id=&#34;swarm&#34;&gt;Swarm&lt;/h4&gt;
+
+&lt;p&gt;安迪兒其實是為了這個功能&lt;br /&gt;
+才會一直的在try
+因為舊版的Swarm其實有點麻煩&lt;br /&gt;
+要建置Consul Key Store daemon&lt;br /&gt;
+要建overlay的網路&lt;br /&gt;
+還要再自已寫一堆腳本去監控和偵測狀態和處理的方式&lt;/p&gt;
+
+&lt;p&gt;而新版的docker 1.12整合了Swarm&lt;br /&gt;
+也有了新的swarm cluster使用和管理方式&lt;br /&gt;
+大大的簡化了整個的流程&lt;/p&gt;
+
+&lt;h4 id=&#34;新的功能&#34;&gt;新的功能:&lt;/h4&gt;
+
+&lt;h4 id=&#34;docker-service-stack-cloud&#34;&gt;Docker Service、Stack、Cloud&lt;/h4&gt;
+
+&lt;p&gt;整合stack與service的管理，可以使用deploy把stack部署到cloud上&lt;/p&gt;
+
+&lt;h4 id=&#34;health-check&#34;&gt;Health check&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/docker/docker/pull/23218&#34;&gt;https://github.com/docker/docker/pull/23218&lt;/a&gt;&lt;br /&gt;
+可以自訂節點的健康&lt;br /&gt;
+&amp;ndash;health-cmd (health用的指令檔)&lt;br /&gt;
+&amp;ndash;health-interval (health的秒數)&lt;br /&gt;
+然後用一般的docker inspect就可以查詢check的結果&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker inspect --format=&#39;&#39; xxname healthy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;live-restore&#34;&gt;Live restore&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/docker/docker/pull/23213&#34;&gt;https://github.com/docker/docker/pull/23213&lt;/a&gt;&lt;br /&gt;
+啟動時增加這個參數，daemon掛了也不會影響到container
+&amp;ndash;live-restore&lt;/p&gt;
+
+&lt;h4 id=&#34;overlay2&#34;&gt;overlay2&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/docker/docker/pull/22126&#34;&gt;https://github.com/docker/docker/pull/22126&lt;/a&gt;&lt;br /&gt;
+裡面有benchmark的數據可以參考一下&lt;/p&gt;
+
+&lt;p&gt;其它還有很多細的東西、指令、參數之類&lt;br /&gt;
+有興趣的，可以多查查官方的說明&lt;br /&gt;
+看了這些，應該手癢了吧&lt;/p&gt;
+
+&lt;p&gt;[實作時間到嘍!]&lt;/p&gt;
+
+&lt;h4 id=&#34;1-安裝新版docker-for-1-12&#34;&gt;1. 安裝新版docker for 1.12&lt;/h4&gt;
+
+&lt;p&gt;參考這頁的說明&lt;br /&gt;
+&lt;a href=&#34;https://github.com/docker/docker/releases&#34;&gt;https://github.com/docker/docker/releases&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;執行安裝指令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -fsSL https://experimental.docker.com/ | sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo usermod -aG docker andy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/EMIf5a&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/zogzGo&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;2-玩玩container的叢集-建一個swarm來玩玩吧&#34;&gt;2. 玩玩Container的叢集，建一個swarm來玩玩吧&lt;/h4&gt;
+
+&lt;p&gt;首先在master機器上，建立管理的節點&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker swarm init --listen-addr docker112-swarm-admin:2377
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/ymP7Z4&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;再來，在其它台node機器上輸入&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker swarm join \
+ --token SWMTKN-1-55xrvnhhax0eqc0hi4iu6aihh8msqvlfjdgqetaqvlf8qm4n0z-7ekdghz9an5d4jpx4ibdaigtx \
+ 10.240.0.3:2377
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/CjM4D4&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+都加入叢集後，可以在主節點master那台，查一下所有的node&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker node ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/hPGhT6&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;看看，超神奇的，就這樣一個跨機器的Container cluster就立完成了&lt;br /&gt;
+這是不是docker的 &lt;strong&gt;黑魔法&lt;/strong&gt; 吶~~~太可怕了，合併swarm後簡化許多繁雜的東西&lt;/p&gt;
+
+&lt;h4 id=&#34;3-新增自已用的network&#34;&gt;3. 新增自已用的network&lt;/h4&gt;
+
+&lt;p&gt;用docker network 建立一個自已的overlay來玩玩&lt;br /&gt;
+建完並指定Container的overlay後，Container就能視為同網段，跨各種機器運行了&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker network create --driver overlay bowwow-net  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/xY51ig&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;4-來見識一下讓大家瘋狂的docker-service威力吧&#34;&gt;4. 來見識一下讓大家瘋狂的Docker Service威力吧&lt;/h4&gt;
+
+&lt;p&gt;建個postgresql database，直接replicas 2台&lt;br /&gt;
+2台都是同樣的database&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker service create --replicas 2 -p 5432:5432 -p 8000:5432 --name=postgresql --network=bowwow-net --env=&amp;quot;constraint:node==docker-swarm-node1&amp;quot; --mount type=volume,source=/home/app/metadb,target=/var/lib/postgresql -e POSTGRESQL_USER=postgres -e POSTGRESQL_PASS=1234 -e POSTGRESQL_DB=demodb bowwow/posttgresql9.4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;docker service ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/Vb5Xax&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;可以看到postgresql啟動完成，2台分散在不同的機器上&lt;/p&gt;
+
+&lt;p&gt;直接來玩一下，2台機器的postgresql同時都能連上&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/6W7Eox&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;隨便改一下其中一台，建一個新的table&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/6W7Eox&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;過一會另一台就跟都同步了&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/gWsS1S&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+而且因為用了bowwow-net的關係&lt;br /&gt;
+開三台機器，三台機器都能互相找的到&lt;br /&gt;
+也就是說，連上3台機器的ip，都能接上這個postgresql db&lt;br /&gt;
+但這個postgresql db是分散成2個Container在跑&lt;br /&gt;
+&lt;strong&gt;docker都幫你做了ha、scale和cluster了&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;只能說:超~&lt;del&gt;神&lt;/del&gt;~的!!!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;隨興的新增和刪除container節點&#34;&gt;隨興的新增和刪除Container節點&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;docker service ps postgresql
+docker service scale postgresql=3
+docker service scale postgresql=1
+docker service update --replicas 2 postgresql
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;新版docker有rolling-update服務&#34;&gt;新版docker有rolling update服務&lt;/h5&gt;
+
+&lt;p&gt;&lt;strong&gt;&amp;ndash;update-delay&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;他會慢慢的更版，不會一次都換掉&lt;br /&gt;
+ex:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker service create \
+  --replicas 3 \
+  --name redis \
+  --update-delay 10s \
+  redis:3.0.6
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;試一下swarm-container-cluster移轉的功能&#34;&gt;試一下Swarm Container Cluster移轉的功能&lt;/h5&gt;
+
+&lt;p&gt;惡意關掉刪除其中一台的postgresql Container&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/xVWrW9&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/EiFWMM&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;果然夠優~馬上又自動的在別台機器上重啟了一個相同的服務&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;一次開10個來玩玩吧&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/fDCI28&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;不想要服務了，刪除它&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker service rm postgresql
+docker service ls
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/pYzbDR&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;新的Docker以上這些功能&lt;br /&gt;
+跟本就是有k8s(Kubernetes)的影子&lt;br /&gt;
+連相關指令名稱都有點相近&lt;br /&gt;
+難怪大家整個看到傻眼，進化後的Docker太強大了。&lt;/p&gt;
+
+&lt;h4 id=&#34;5-部署docker-stack&#34;&gt;5. 部署Docker Stack&lt;/h4&gt;
+
+&lt;p&gt;大致上看起來&lt;br /&gt;
+新的docker swarm像是用service就可以處理&amp;amp;管理相關的container服務&lt;br /&gt;
+如果想用之前compose之類的一次啟動管理的方式呢??
+安迪兒找了找，發現docker有一個deploy的相關功能&lt;br /&gt;
+看了他文字上有說，要用dab來部署&lt;br /&gt;
+忍不住好奇試了一下&lt;br /&gt;
+真的是可以用&lt;/p&gt;
+
+&lt;p&gt;首先，先裝上最新版的docker-compose(1.8)&lt;br /&gt;
+參考這頁&lt;br /&gt;
+&lt;a href=&#34;https://github.com/docker/compose/releases&#34;&gt;https://github.com/docker/compose/releases&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m` &amp;gt; /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/6dB7jy&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;編寫一下docker-compose file&lt;br /&gt;
+啟動它，成功後，可以再自行下指令bundle成dab檔&lt;br /&gt;
+再使用docker deploy去部署&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo docker-compose up -d
+sudo docker-compose bundle -o elk.dab
+docker deploy elk
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/Jfuq9q&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/FlZqKI&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/mqRVTu&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;看一下結果吧&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/Cr71Mu&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/QERLf3&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;呼&amp;hellip;終於，東西實在太多了，安迪就也沒辦法一次說完試完&lt;br /&gt;
+總之，這次的docker 1.12非常的強大&lt;br /&gt;
+如果想要有較簡易的，除了k8s或mesos另外選擇的&lt;br /&gt;
+也許考慮一下原生的docker看看嘍&lt;br /&gt;
+應該不會失望的~~~XD&lt;br /&gt;
+收工嘍~收工嘍!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>微軟windows10更新擁抱linux系統-win10 ubuntu shell</title>
+      <link>/127.0.0.1/post/20160610/</link>
+      <pubDate>Tue, 14 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/127.0.0.1/post/20160610/</guid>
+      <description>
+
+&lt;p&gt;微軟在今年3月Build 2016開發者大會，拋出了一個震撼彈&lt;br /&gt;
+就是windows10竟然可以使用ubuntu的bash shell&lt;br /&gt;
+而且不是虛擬機器，是原生的!&lt;br /&gt;
+(微軟馬上洗白變好人了~XD)&lt;/p&gt;
+
+&lt;p&gt;這實在太有話題了，微軟當時有說今年夏季會提供相關更新&lt;br /&gt;
+直到最近這陣子，安迪兒發現有新的win10 Preview版本&lt;br /&gt;
+Link:&lt;br /&gt;
+&lt;a href=&#34;https://blogs.windows.com/windowsexperience/2016/04/06/announcing-windows-10-insider-preview-build-14316/&#34;&gt;Windows 10 Insider Preview Build 14316&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://winaero.com/blog/download-windows-10-build-14316-iso-images/&#34;&gt;Download Windows 10 build 14316 ISO images&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;這太有趣了，安迪兒立馬試玩一下~XD&lt;/p&gt;
+
+&lt;h5 id=&#34;記錄一下win10開啟ubuntu-shell的方式&#34;&gt;記錄一下win10開啟ubuntu shell的方式&lt;/h5&gt;
+
+&lt;h4 id=&#34;1-開啟開發人員功能模式&#34;&gt;1. 開啟開發人員功能模式&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/2yLSWP&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/GQcVyg&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;2-控制台-程式和功能-程式集-windows功能&#34;&gt;2. 控制台-&amp;gt;程式和功能-&amp;gt;程式集-&amp;gt;windows功能&lt;/h4&gt;
+
+&lt;h4 id=&#34;勾選-windows-subsystem-for-linux&#34;&gt;勾選[windows subsystem for linux]&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/s6skUd&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+ &lt;img src=&#34;https://goo.gl/DhBw4g&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;3-執行bash-直接用尋找bash並執行它&#34;&gt;3. 執行bash 直接用尋找bash並執行它&lt;/h4&gt;
+
+&lt;p&gt;(download&amp;amp;安裝 &lt;strong&gt;Bash on ubuntu on windows&lt;/strong&gt;)&lt;br /&gt;
+  &lt;img src=&#34;https://goo.gl/hCkJsE&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+  &lt;img src=&#34;https://goo.gl/5bdD4k&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;4-搜尋-執行-裝好的bash-on-ubuntu-on-windows&#34;&gt;4. 搜尋&amp;amp;執行 裝好的Bash on Ubuntu on Windows&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/5tVky4&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;噢&#34;&gt;噢！！！！！&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/qjL2qO&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;太開心了吶-xd&#34;&gt;太開心了吶~XD&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/s0heJC&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;原來在shell裡面windows的東西在這-很特別的感覺-xd&#34;&gt;原來在shell裡面windows的東西在這，很特別的感覺~XD&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/tkpBwe&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;win10 build 14316真是太帥氣了吶~~&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>免費開啟MAC正常讀寫入NTFS磁碟</title>
+      <link>/127.0.0.1/post/20160608/</link>
+      <pubDate>Mon, 13 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/127.0.0.1/post/20160608/</guid>
+      <description>
+
+&lt;h2 id=&#34;為啥隨身碟寫不進去&#34;&gt;為啥隨身碟寫不進去!&lt;/h2&gt;
+
+&lt;p&gt;在mac上碰到了windows ntfs格式的磁碟其實是件有點小煩人的事&lt;br /&gt;
+偏偏ntfs又是大宗，大部份拿隨身碟copy檔案都是ntfs格式&lt;/p&gt;
+
+&lt;p&gt;mac對於ntfs預設都是只能讀取不能寫入&lt;br /&gt;
+(不知道用意是啥~XD)&lt;/p&gt;
+
+&lt;p&gt;想要寫入ntfs隨身碟，都要裝一些FUSE還是Paragon NTFS等軟體&lt;br /&gt;
+除了要付費之外，寫入的速度也不快&lt;/p&gt;
+
+&lt;p&gt;之前安迪兒有看到文章說mac其實本身系統有內建NTFS的讀寫&lt;br /&gt;
+試了一下，果然是真的XD~&lt;/p&gt;
+
+&lt;h5 id=&#34;記錄一下過程&#34;&gt;&amp;lt;記錄一下過程&amp;gt;&lt;/h5&gt;
+
+&lt;h4 id=&#34;1-接上隨身碟-打開終端機&#34;&gt;1. 接上隨身碟，打開終端機&lt;/h4&gt;
+
+&lt;p&gt;輸入mount，看一下隨身碟mount的路徑&lt;br /&gt;
+下圖是&lt;strong&gt;/dev/disk3s1&lt;/strong&gt;掛在&lt;strong&gt;/Volumes/16G&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/5C0Uj3&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;2-umount一下目前掛的路徑&#34;&gt;2. umount一下目前掛的路徑&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo umount /Volumes/16G  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/QmOs4U&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;3-建立新的資料匣-等會用來掛隨身碟用&#34;&gt;3. 建立新的資料匣，等會用來掛隨身碟用&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir /tmp/usb16G  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/g76QvJ&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;4-重掛一次usb磁區到剛建的資料匣上&#34;&gt;4. 重掛一次usb磁區到剛建的資料匣上&lt;/h4&gt;
+
+&lt;p&gt;(就是這邊，重掛一次ntfs，並指定為rw可讀寫)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo mount -o rw,auto,nobrowse -t ntfs /dev/disk3s1 ./usb16g/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/wVjuyx&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;5-ok嘍-打開一下資料匣-copy檔案進去試試&#34;&gt;5. ok嘍，打開一下資料匣，copy檔案進去試試&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;open .
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/XYmkLp&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;6-最後如果不用時-記得umount一下&#34;&gt;6. 最後如果不用時，記得umount一下&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo umount /private/tmp/usb16G
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/5bzvr4&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;以上~~收工嘍~XD&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>刪掉惱人的Mac .DS_Store文件</title>
+      <link>/127.0.0.1/post/20160607/</link>
+      <pubDate>Tue, 07 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/127.0.0.1/post/20160607/</guid>
+      <description>
+
+&lt;p&gt;使用mac筆電的，應該都有個切身之痛&lt;br /&gt;
+就是只要用Finder進過的資料匣&lt;br /&gt;
+都會自動生出一個&lt;strong&gt;.DS_Store&lt;/strong&gt;檔&lt;/p&gt;
+
+&lt;p&gt;真的是超煩的&lt;br /&gt;
+不論是git上code、&lt;br /&gt;
+ftp傳輸、或是資料匣copy&lt;br /&gt;
+一不注意，裡面總是會有這個檔&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;.DS_Store&lt;/strong&gt;檔有點像是&lt;br /&gt;
+Windows上的&lt;strong&gt;desktop.ini&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;安迪兒這邊記錄一下停用這個惱人的檔案&lt;/p&gt;
+
+&lt;h4 id=&#34;1-搜尋-刪除mac裡所有的-ds-store-檔&#34;&gt;1. 搜尋&amp;amp;刪除mac裡所有的&lt;strong&gt;.DS_Store&lt;/strong&gt;檔&lt;/h4&gt;
+
+&lt;p&gt;打開「Terminal終端機」&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo find . -name &amp;quot;.DS_Store&amp;quot; -depth -exec rm {} \;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;2-禁止-ds-store生成&#34;&gt;2. 禁止.DS_store生成&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;defaults write com.apple.desktopservices DSDontWriteNetworkStores true  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;3-恢復-ds-store生成&#34;&gt;3. 恢復.DS_store生成&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;defaults delete com.apple.desktopservices DSDontWriteNetworkStores  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;開掉終端機，重開mac後就會生效了&lt;br /&gt;
+收工嘍~&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>修改Ubuntu ulimit限制</title>
+      <link>/127.0.0.1/post/20160604/</link>
+      <pubDate>Sat, 04 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/127.0.0.1/post/20160604/</guid>
+      <description>
+
+&lt;p&gt;安迪兒最近在壓測時碰上了&lt;br /&gt;
+Too many open files in system&lt;/p&gt;
+
+&lt;p&gt;看了一下gce上機器的資源其實還好&lt;br /&gt;
+應該可以再榨一點效能出來&lt;br /&gt;
+想說檔案數再開大一點試試&lt;/p&gt;
+
+&lt;p&gt;記錄一下調整的方式&lt;br /&gt;
+先登入看一下系統預設數量是多少&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ulimit -n
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;嗯~1024，應該可以再開多一些&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/yEVVY6&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;改一下數字&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo ulimit -n 65535  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;呃-command-not-found&#34;&gt;呃~command not found&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/6yAXrv&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;sudo無法執行ulimit&lt;br /&gt;
+原因是ulimit是bash内置命令&lt;br /&gt;
+改一下用su -，再輸入ulimit&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;su -  
+ulimit -n 65536  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;查一下改完後的數量，應該ok了&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ulimit -n
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/CPrByn&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;以上手動設定，&lt;strong&gt;重開機後會消失~XD&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;安迪兒查了一些開機自動設定的方式&#34;&gt;安迪兒查了一些開機自動設定的方式&lt;/h4&gt;
+
+&lt;p&gt;記錄一下最後試的設定&lt;/p&gt;
+
+&lt;h4 id=&#34;1-修改-etc-security-limits-conf&#34;&gt;1. 修改/etc/security/limits.conf&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/Tg5nxZ&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;* soft nofile 65535   
+* hard nofile 65535
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;2-修改-etc-pam-d-common-session&#34;&gt;2.修改 /etc/pam.d/common-session&lt;/h4&gt;
+
+&lt;p&gt;加上這行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;session required pam_limits.so  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/muLvxD&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;3-編輯-etc-profile&#34;&gt;3.編輯/etc/profile&lt;/h4&gt;
+
+&lt;p&gt;加上ulimit -SHn 65535&lt;/p&gt;
+
+&lt;h4 id=&#34;4-收工了-重啟一下&#34;&gt;4.收工了，重啟一下&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo reboot  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;5-看看有沒效&#34;&gt;5.看看有沒效&lt;/h4&gt;
+
+&lt;p&gt;查一下ulimit&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ulimit -a  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/jNIRG5&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;看來這樣就ok了&lt;br /&gt;
+以上!收工嘍~&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>匯入匯出MongoDB資料成JSON CSV檔案</title>
+      <link>/127.0.0.1/post/20160601/</link>
+      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/127.0.0.1/post/20160601/</guid>
+      <description>
+
+&lt;p&gt;前陣子安迪兒剛好碰到要匯出mongodb資料&lt;br /&gt;
+需要轉csv給其它人員使用&lt;br /&gt;
+查了一下，發現mongodb直接有支援資料匯出成json、csv格式&lt;br /&gt;
+(超強XD)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;兩者的區別：&lt;/strong&gt;&lt;br /&gt;
+- JSON 是 mongoexport 默認的匯出格式，不需要指定&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CSV 格式需要明確指定欄位屬性名&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;一般大多使用json，特殊需求像是需要用到excel之類的文件編輯的，會比較偏向使用csv格式。&lt;br /&gt;
+參考以下官方文件&lt;/p&gt;
+
+&lt;p&gt;[mongoexport]&lt;br /&gt;
+&lt;a href=&#34;https://docs.mongodb.com/master/reference/program/mongoexport&#34;&gt;https://docs.mongodb.com/master/reference/program/mongoexport&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;[mongoimport]&lt;br /&gt;
+&lt;a href=&#34;https://docs.mongodb.com/manual/reference/program/mongoimport/#use&#34;&gt;https://docs.mongodb.com/manual/reference/program/mongoimport/#use&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;安迪兒貼一下用的指令&lt;/p&gt;
+
+&lt;h3 id=&#34;匯出&#34;&gt;匯出:&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;mongodb collection指定欄位匯出資料轉csv&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongoexport --host localhost --db xxdata --collection unknown_data --username xx --password xx --csv --out text.csv --fields _id,lang,pinyin,artists,phonetic,hash_code,created_at,title,vocal_track,filename,hash_method,words
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;mongodb collection資料匯出轉json&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongoexport --host localhost -d xxdata -c unknown_songs -u xxuser -p xxpassword -o output.json
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/FP6y0y&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;匯入&#34;&gt;匯入:&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;測試一下匯入&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongoimport  --host localhost --db xxdata --collection test --username xx --password xx --type csv --headerline --file ./text.csv
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/54DixU&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;附上mongo-db-dump-restore資料庫&#34;&gt;附上mongo db dump &amp;amp; restore資料庫&lt;/h4&gt;
+
+&lt;p&gt;全部db dump&amp;amp;restore&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongodump -h localhost -u xx -p xx -d metadata -o ./dump  
+
+mongorestore -h localhost -u xx -p xx -d metadata --directoryperdb ./dump  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;單一collection回復&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongodump -h localhost -u xx -p xx -d metadata --collection unknown_songs  
+
+mongorestore -h localhost -u xx -p x -d metadata --collection test ./dump/metadata/unknown_songs.bson  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;一些參數&lt;/strong&gt;&lt;br /&gt;
+- -h：mongo位址&lt;br /&gt;
+- -d：db name&lt;br /&gt;
+- &amp;ndash;directoryperdb：dump的目錄&lt;br /&gt;
+- &amp;ndash;drop：restore時，先刪掉資料再恢復&lt;/p&gt;
+
+&lt;p&gt;以上~~收工嘍!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>關於MongoDB設定權限</title>
+      <link>/127.0.0.1/post/20160531/</link>
+      <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/127.0.0.1/post/20160531/</guid>
+      <description>&lt;p&gt;大家在使用MongoDB，裝完預設其實是沒設定權限的&lt;br /&gt;
+因為MongoDB預設你不會對外開放&lt;br /&gt;
+一般是會鎖定只給api的機器讀取資料&lt;br /&gt;
+但…有資料庫就一定會有權限&lt;br /&gt;
+所以遇上要使用帳號密碼登入時要怎辦&lt;br /&gt;
+這邊安迪兒記錄一下使用的方式&lt;br /&gt;
+大至分為幾個步驟&lt;br /&gt;
+1、設定一個管權限的使用者&lt;br /&gt;
+2、設定要開放MongoDB的使用者
+3、關掉MongoDB，改換用權限啟動的參數，重新啟動MongoDB&lt;/p&gt;
+
+&lt;p&gt;1.首先登入MongoDB&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongo  
+use admin ;
+db.createUser(
+{
+user: &amp;quot;xx&amp;quot;,
+pwd: &amp;quot;xx&amp;quot;,
+roles: [ { role: &amp;quot;userAdminAnyDatabase&amp;quot;, db: &amp;quot;metadata&amp;quot; } ]
+}
+);
+show users;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2.再來設定一下要開放帳號密碼的metadata db&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;use metadata;
+{
+user: &amp;quot;xx&amp;quot;,
+pwd: &amp;quot;xx&amp;quot;,
+roles: [ { role: &amp;quot;dbOwner&amp;quot;, db: &amp;quot;metadata&amp;quot; } ]
+};
+show users;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/H8RmtH&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;弄完了就下exit離開MongoDB的shell吧&lt;br /&gt;
+查一下mongo的process&lt;br /&gt;
+然後kill它&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ps aux | grep mongo
+sudo kill xxx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3.最後重啟一下MongoDB，帶上權限的參數，完成嘍 !&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongod --auth
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;試一下帳號是否可登入&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongo --port 27017 -u &amp;quot;xx&amp;quot; -p &amp;quot;xx&amp;quot; --authenticationDatabase &amp;quot;admin&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/uPPmL9&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;另外記錄一下admin資料庫的其它特殊權限&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;readAnyDatabase &amp;gt; 讀取所有資料庫
+readWriteAnyDatabase &amp;gt; 讀寫所有資料庫
+userAdminAnyDatabase &amp;gt; 管理所有資料庫使用者
+dbAdminAnyDatabase &amp;gt; 所有資料庫的管理者
+root &amp;gt; 最高權限
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上~~收工嘍!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL的備份與復原</title>
+      <link>/127.0.0.1/post/20160530/</link>
+      <pubDate>Mon, 30 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/127.0.0.1/post/20160530/</guid>
+      <description>&lt;p&gt;安迪兒最較常用到PostgreSQL備資料倒資料&lt;br /&gt;
+記錄一下操作的方式&lt;/p&gt;
+
+&lt;p&gt;1、備份data&lt;br /&gt;
+PostgreSQL內建使用&lt;strong&gt;pg_dump&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pg_dump [資料庫名] -U [帳號] -f [備份檔案.sql]
+
+另一種備份整個db的  
+ pg_dump -h x.x.x.x -p 5432 -U admin -F c -b -v -f &amp;quot;xx.dbf&amp;quot; xxdatabase
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;pg_dump meta_development -U posxxx -f postgres-db-20160530.sql  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/LEwRb1&#34; width=&#34;70%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;2、還原
+PostgreSQL內建使用&lt;strong&gt;psql&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;psql -f [備份檔案名稱] [資料庫] [帳號]  
+
+還原整個db的   
+pg_restore -h x.x.x.x -p 5432 -U admin -d xxdatabase -v &amp;quot;xx.dbf&amp;quot;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;psql -f xx.sql test posxxx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/CL69Hh&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;看一下是不是有把資料回灌到test database了&lt;br /&gt;
+嗯~~資料已經進去原來的test嘍&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/ExCJDm&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;其它:設定不輸入密碼&lt;br /&gt;
+1.  /etc/profile.local 加上&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;export PGPASSWORD=&amp;quot;密碼&amp;quot;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;使用者的家目錄($HOME)下，新增一個.pgpass檔&lt;br /&gt;
+&lt;code&gt;
+hostname:port:database:username:password   
+&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;差別是第2種可以指定特定的database不輸入密碼&lt;/p&gt;
+
+&lt;p&gt;以上~~收工嘍!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Qnap nas掛上遠端Synology磁碟資料</title>
+      <link>/127.0.0.1/post/20160518/</link>
+      <pubDate>Wed, 18 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/127.0.0.1/post/20160518/</guid>
+      <description>
+
+&lt;p&gt;安迪兒新的qnap NAS剛整理完所有資料，&lt;br /&gt;
+剩下一些新的資料都放在原舊的Synology nas上&lt;/p&gt;
+
+&lt;p&gt;安迪兒想掛上別台nas的samba磁區，然後再對拷檔案&lt;br /&gt;
+但…安迪兒發現，qnap的nas怎麼設定都沒辦法掛上Synology的samba磁碟&lt;br /&gt;
+～囧&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/E8n9kz&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/mhh1rD&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;查了一下，發現好像有人有反應這件事~XD&lt;/p&gt;
+
+&lt;p&gt;安迪兒試了一下發現可以直接用指令mount上Synology的samba磁碟資料&lt;br /&gt;
+貼一下過程&lt;/p&gt;
+
+&lt;p&gt;首先SSH登入nas&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh admin@x.x.x.x
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;找個資料匣準備掛上別台nas的samba&lt;br /&gt;
+安迪兒這邊建了一個共用的資料匣叫tmp&lt;br /&gt;
+裡面打算掛Synology的照片和電影2個資料匣&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd /share/CACHEDEV1_DATA/tmp
+mkdir video photo
+mount.cifs //10.0.0.7/video -o user=xx password=xx
+mount.cifs //10.0.0.7/photo -o user=xx password=xx  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/IK5ocL&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;掛完後使用nas上File Station打開資料匣，開始狂copy資料到新nas上吧&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/W9AdwQ&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;邊copy data邊看一下效能&lt;br /&gt;
+嗯&amp;hellip;網路每秒約100MB，碟碟IOPS 快300&lt;br /&gt;
+還ok啦&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/LgNJqj&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/tHGykJ&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;copy完umount一下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;umount ./video ./photo  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;copy完資料後，新nas也差不多完整了&lt;br /&gt;
+可以開心的接電視直播電影了&lt;br /&gt;
+(有hdmi接電視的nas好讚呀~xd)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;記錄一些mount方式&lt;/strong&gt;&lt;br /&gt;
+比較新的Smaba只能用cifs的mount方式&lt;/p&gt;
+
+&lt;h5 id=&#34;smbmount&#34;&gt;[smbmount]&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;smbmount -o username=&amp;quot;xx&amp;quot;,password=&amp;quot;xx&amp;quot; //ip/share /mnt/smb
+
+smbumount /mnt/smb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;mount&#34;&gt;[mount]&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;mount -t smbfs -o username=&amp;quot;xx&amp;quot;,password=&amp;quot;xx&amp;quot; //ip/share /mnt/smb  
+
+umount /mnt/smb  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;cifs&#34;&gt;[cifs]&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;mount -t cifs -o username=&amp;quot;xx&amp;quot;,password=&amp;quot;xx&amp;quot; //ip/share /mnt/smb
+umount /mnt/smb
+
+mount.cifs -o username=&amp;quot;xx&amp;quot;,password=&amp;quot;xx&amp;quot; //ip/share /mnt/smb
+umount.cifs /mnt/smb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上~~收工嘍!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>拯救synology nas上raid1內接硬碟資料</title>
+      <link>/127.0.0.1/post/20160513/</link>
+      <pubDate>Fri, 13 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/127.0.0.1/post/20160513/</guid>
+      <description>&lt;p&gt;有用nas的，早晚會碰到nas壞了或是啥不可預測的神之力&lt;br /&gt;
+總之nas裡的硬碟多多少少會有機會碰到要外接讀取資料的機會&lt;/p&gt;
+
+&lt;p&gt;安迪兒也不例外&lt;br /&gt;
+某天安迪兒nas容量不夠，要買新的硬碟&lt;br /&gt;
+因為安迪兒nas(ds213j)很慢&lt;br /&gt;
+只有usb2傳輸，1g的網路，傳輸上限也只能到每秒30多MB&lt;br /&gt;
+總之…備資料要超久的&lt;/p&gt;
+
+&lt;p&gt;於是安迪兒把裡面的raid1拆一顆硬碟下來&lt;br /&gt;
+拿到公司，想說外接公司nas把資料快速的備份出來&lt;br /&gt;
+但…安迪兒天真的以為，raid1不就是2顆硬碟一模模一樣樣&lt;br /&gt;
+隨便拿一顆接上硬碟外接盒，把裡面的檔案讀出來就好了。&lt;/p&gt;
+
+&lt;p&gt;果然是事情沒想的那麼容易&lt;br /&gt;
+硬碟外接後，不管接到電腦或nas都讀不到東西&lt;br /&gt;
+最多只讀到加密的raid磁區&lt;/p&gt;
+
+&lt;p&gt;安迪兒整個傻眼，深吸了一口氣&lt;br /&gt;
+想著，那天…安迪兒的機器壞了，找不到同型號的
+…就gg了嗎!!!&lt;br /&gt;
+(這太蝦了吧!!)&lt;/p&gt;
+
+&lt;p&gt;於是安迪兒在茫茫google海裡，研究了一下&lt;br /&gt;
+找到了可能的方案，利用linux software raid的方式&lt;br /&gt;
+弄個raid來試試讀資料&lt;br /&gt;
+參考資料如下:&lt;br /&gt;
+&lt;a href=&#34;http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-ig-s390-multi-zh_tw-4/s1-s390info-raid.html&#34;&gt;http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-ig-s390-multi-zh_tw-4/s1-s390info-raid.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Mdadm&#34;&gt;https://en.wikipedia.org/wiki/Mdadm&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;http://linux.die.net/man/8/mdadm&#34;&gt;http://linux.die.net/man/8/mdadm&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;以下就是安迪兒整個修復的過程&lt;/p&gt;
+
+&lt;p&gt;用usb外接盒裝上硬碟，接上公司的nas&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/W7Bcnv&#34; &gt;&lt;/p&gt;
+
+&lt;p&gt;執行以下步驟&lt;/p&gt;
+
+&lt;p&gt;1.修復原raid1 HDD&lt;br /&gt;
+mdadm -A -R /dev/xxx /dev/xxx&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/1jtKCN&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;2.fdisk -l xx 找一下相關磁碟資訊&lt;br /&gt;
+可以看一下Blocks的大小，猜一下大的是存資的磁區&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/fyjJnT&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/cnRqA5&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;3.建新目錄&lt;br /&gt;
+mkdir /mnt/old_hdd&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/6SzuD4&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;4.把找到的md2掛到剛建的目錄裡&lt;br /&gt;
+mount -t ext4 /dev/md2 /mnt/old_hdd/&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/Fi8mbK&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/jyifaF&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;5.開始copy資料吧，此時nas裡面應該讀的到資料了&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/Fi8mbK&#34; width=&#34;100%&#34;&gt;&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/qpM7pj&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;6.完成後&lt;br /&gt;
+unmount資料匣&lt;br /&gt;
+removed md virtual device&lt;/p&gt;
+
+&lt;p&gt;全部用到的指令如下:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;fdisk -l
+mdadm -A -R /dev/md2 /dev/sde3
+mkdir /mnt/old_hdd
+mount -t ext4 /dev/md2 /mnt/old_hdd/
+mount | grep ^/dev/md2
+umount /mnt/old_hdd
+mdadm -S /dev/md2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;到這邊…有沒發現一件事&lt;br /&gt;
+其實所謂的raid，就是用software raid的方式弄的&lt;br /&gt;
+如果是硬體晶片的話可能就解不出來了&lt;br /&gt;
+有好有壞啦~XD&lt;/p&gt;
+
+&lt;p&gt;另外，新的nas超快，用usb3，或是直接網路傳檔&lt;br /&gt;
+每秒都有100mb以上的速度，真是差太多了。&lt;/p&gt;
+
+&lt;p&gt;以上~~收工嘍!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MAC上 /dev/disk 與 /dev/rdisk 的差別 (解決 dd 過慢的問題)</title>
+      <link>/127.0.0.1/post/20160512/</link>
+      <pubDate>Thu, 12 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/127.0.0.1/post/20160512/</guid>
+      <description>&lt;p&gt;如果各位有在玩Raspberry pi或banana pi之類的東西&lt;br /&gt;
+應該常常會用到讀寫img吧&lt;br /&gt;
+一般要把映象檔整塊燒到sd卡裡面都用到&lt;br /&gt;
+dd這個指令&lt;/p&gt;
+
+&lt;p&gt;備份:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dd if=/dev/disk2 of=/xxx/path/disk2.img
+dd if=/dev/disk2 | gzip &amp;gt; /xxx/path/disk2.img.gz  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;還原:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo dd bs=4M if=2014-01-07-wheezy-raspbian.img of=/dev/disk2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;大多數都是dd if=xxx of=/dev/disk
+不過安迪兒有看到老外有用of=/dev/rdisk&lt;/p&gt;
+
+&lt;p&gt;安迪兒好奇查了一下&lt;br /&gt;
+原來rdisk是raw模式存取，接近kernel原生檔案系統效能&lt;br /&gt;
+所以用這個寫sd卡會比通用的/dev/disk快很多&lt;br /&gt;
+安迪兒試了之後覺的速度優很多&lt;/p&gt;
+
+&lt;p&gt;指令如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dd if=xx.img of=/dev/rdisk  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;試試嘍~~&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How To Install Elasticsearch on Ubuntu 14.04</title>
+      <link>/127.0.0.1/post/20160101/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/127.0.0.1/post/20160101/</guid>
+      <description>
+
+&lt;p&gt;最近測東西，都用整理好的docker Elasticsearch叢集&lt;br /&gt;
+有點忘了之前Elasticsearch建置方式&lt;br /&gt;
+補貼上去年建的Elasticsearch步驟當備忘用&lt;/p&gt;
+
+&lt;h4 id=&#34;1-install-java&#34;&gt;1. Install Java&lt;/h4&gt;
+
+&lt;p&gt;官方是說&lt;br /&gt;
+[Elasticsearch recommends Oracle JDK version 1.8.0_73]&lt;/p&gt;
+
+&lt;p&gt;這邊可以使用OpenJDK 7或Oracle JDK 8&lt;/p&gt;
+
+&lt;p&gt;OpenJDK 7&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update  
+sudo apt-get install openjdk-7-jre  
+java -version  
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Oracle JDK 8&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo add-apt-repository -y ppa:webupd8team/java  
+sudo apt-get update    
+sudo apt-get -y install oracle-java8-installer   
+java -version  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/9wVhs1&#34; width=&#34;100%&#34;&gt;
+&lt;img src=&#34;https://goo.gl/q0QMGs&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;2-installing-elasticsearch-1-7-2&#34;&gt;2. Installing Elasticsearch 1.7.2&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo wget https://download.elastic.co/Elasticsearch/Elasticsearch/Elasticsearch-1.7.2.deb  
+sudo dpkg -i Elasticsearch-1.7.2.deb  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/eW9sxo&#34; width=&#34;100%&#34;&gt;
+&lt;img src=&#34;https://goo.gl/iFfmPo&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;3-installing-plugin&#34;&gt;3. Installing plugin&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;head&lt;br /&gt;
+&lt;code&gt;
+sudo /usr/share/Elasticsearch/bin/plugin -install mobz/Elasticsearch-head  
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;marvel&lt;br /&gt;
+&lt;code&gt;
+sudo /usr/share/Elasticsearch/bin/plugin -install Elasticsearch/marvel/latest  
+&lt;/code&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;jdbc river&lt;br /&gt;
+版本參考
+&lt;a href=&#34;http://xbib.org/repository/org/xbib/Elasticsearch/plugin/Elasticsearch-river-jdbc/&#34;&gt;http://xbib.org/repository/org/xbib/Elasticsearch/plugin/Elasticsearch-river-jdbc/&lt;/a&gt;&lt;br /&gt;
+&lt;code&gt;
+plugin --install jdbc --url http://xbib.org/repository/org/xbib/Elasticsearch/plugin/Elasticsearch-river-jdbc/1.5.0.5/Elasticsearch-river-jdbc-1.5.0.5-plugin.zip  
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;jdbc postgresql&lt;br /&gt;
+版本參考列表&lt;br /&gt;
+&lt;a href=&#34;https://jdbc.postgresql.org/download.html&#34;&gt;https://jdbc.postgresql.org/download.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://github.com/jprante/Elasticsearch-jdbc&#34;&gt;https://github.com/jprante/Elasticsearch-jdbc&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;wget https://jdbc.postgresql.org/download/postgresql-9.4-1204.jdbc4.jar
+wget https://jdbc.postgresql.org/download/postgresql-9.4-1204.jdbc42.jar
+/usr/share/Elasticsearch/plugins/jdbc  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/moyQVm&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;4-configuring-elasticsearch&#34;&gt;4. Configuring Elasticsearch&lt;/h4&gt;
+
+&lt;p&gt;一些Elasticsearch檔案路徑&lt;br /&gt;
+- /usr/share/Elasticsearch&lt;br /&gt;
+- /etc/Elasticsearch&lt;br /&gt;
+- /etc/init.d/Elasticsearch&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo update-rc.d Elasticsearch defaults  
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/1xZljC&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;設定Elasticsearch.yml檔&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo nano /etc/Elasticsearch/Elasticsearch.yml  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;參考內容:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;marvel.agent.enabled: false
+cluster.name: bowwow
+node.name: pro-bowwow
+node.master: true
+node.data: true
+index.number_of_shards: 5
+bootstrap.mlockall: true
+index.cache.field.max_size: 50000
+index.cache.field.expire: 10m
+index.cache.field.type: soft
+threadpool.index.type: fixed
+threadpool.index.size: 100
+threadpool.index.queue_size: 500
+#discovery.zen.ping.multicast.enabled: false  
+#discovery.zen.ping.unicast.hosts: [&amp;quot;pro-bowwow&amp;quot;,&amp;quot;node1&amp;quot;,&amp;quot;node2&amp;quot;]
+
+th:
+data: /data/data
+logs: /data/log
+plugins: /data/plugins
+work: /data/work
+
+http.cors.allow-origin: &amp;quot;/.*/&amp;quot;
+http.cors.enabled: true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;5-設定完成&#34;&gt;5. 設定完成&lt;/h4&gt;
+
+&lt;p&gt;啟用服務嘍&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service Elasticsearch start  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;測試一下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl localhost:9200
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://goo.gl/tod19x&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;從db建一些測試資料進去&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/zOb2kc&#34; width=&#34;100%&#34;&gt;
+&lt;img src=&#34;https://goo.gl/CeMO7g&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;測一下7萬筆資料內搜尋的效能&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ab -n 1000 -c 10  &amp;quot;http://demo/songs/data/_search?&amp;amp;q=id:100&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;嗯~~測了一下，從數千筆資料搜尋和從7萬多筆資料搜尋，Requests per second數差不多&lt;br /&gt;
+&lt;img src=&#34;https://goo.gl/rgIRYy&#34; width=&#34;100%&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;收工嘍~收工嘍~&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,10 +1,6 @@
 +++
 title = "2016 Computex 直擊\n(台北國際電腦展)"
 date = "2016-05-31"
-weight = -1
-video_mp4 = "/vid/computex2016.mp4"
-meta_description="2016 Computex"
-meta_keywords="2016 Computex,2016 台北國際電腦展,asus zenbo,健身、VR、多螢幕、2萬不到的機器人"
 +++
 日期：5/31（二）至 6/4（六）  
 地點：南港展覽館、世貿一館、世貿三館、國際會議中心  
@@ -32,16 +28,16 @@ meta_keywords="2016 Computex,2016 台北國際電腦展,asus zenbo,健身、VR�
 
 剛開展就看到了這隻軟銀的機器人  
 (這也是大會服務人員之一嗎?)  
-<img src="https://goo.gl/lzywyM" width="70%">
+<img src="https://goo.gl/lzywyM" width="100%">
 
 再來是看到和安迪兒同名的高檔POWER  
 (所以有點高級~大誤)  
-<img src="https://goo.gl/kvRS1j" width="70%">  
+<img src="https://goo.gl/kvRS1j" width="100%">  
 
 然後安迪兒看到了超大瓶的液態氮嗎?  
 可能要噴5天，所以特別大罐  
 (嘴角抖了一下…這，玩這麼大喔)  
-<img src="https://goo.gl/p7VHcN" width="70%">  
+<img src="https://goo.gl/p7VHcN" width="100%">  
 
 旁邊是他們家的模特兒  
 而且很特別的都是外國人
@@ -50,7 +46,7 @@ meta_keywords="2016 Computex,2016 台北國際電腦展,asus zenbo,健身、VR�
 (福利吶~~廠商成功吸睛了XD)  
 
 安迪兒照完相，覺的液態氮有點大瓶，所以還是閃遠點好了~XD  
-<img src="https://goo.gl/JBTqGX" width="70%">  
+<img src="https://goo.gl/JBTqGX" width="100%">  
 
 展示會場中也看到一堆改裝超漂亮的電腦  
 水冷、雙顯卡、多色led燈、拉拉熊、鋼彈造型  
@@ -71,7 +67,7 @@ meta_keywords="2016 Computex,2016 台北國際電腦展,asus zenbo,健身、VR�
 
 這是v-color的場，蠻熱鬧的  
 後面一些老外在大喊「Yes!Yes!」  
-<img src="https://goo.gl/7ERtsV" width="70%">  
+<img src="https://goo.gl/7ERtsV" width="100%">  
 
 一些有趣造型的佈景  
 <img src="https://goo.gl/8HdFtH" width="50%"><img src="https://goo.gl/YZPlRR" width="50%">

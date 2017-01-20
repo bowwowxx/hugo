@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="安迪兒隨手貼">
+<meta name="description" content="How To Install Elasticsearch on Ubuntu 14.04">
+
+<base href="127.0.0.1/127.0.0.1/">
+<title>
+
+
+     安迪兒隨手貼 - How To Install Elasticsearch on Ubuntu 14.04 
+
+</title>
+<link rel="canonical" href="127.0.0.1/127.0.0.1/post/20160101/">
+
+
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+
+
+<link rel="stylesheet" href="127.0.0.1/127.0.0.1/css/reset.css">
+<link rel="stylesheet" href="127.0.0.1/127.0.0.1/css/main.css">
+
+
+
+
+<link rel="shortcut icon"
+
+    href="127.0.0.1/img/logo.png"
+
+>
+
+
+
+</head>
+
+
+<body lang="en">
+
+
+<section class="header">
+
+    <div class="container">
+        <a href="127.0.0.1/127.0.0.1/"><img class="logo" src="127.0.0.1/img/logo.png" alt="安迪兒隨手貼 Logo"/></a>
+        <div class="content">
+            <a href="127.0.0.1/127.0.0.1/"><div class="name"><h1>安迪兒隨手貼</h1></div></a>
+            <nav>
+                <ul>
+                    <a href="127.0.0.1/127.0.0.1/post/"><li>Post</li></a>
+                    
+                        
+                    
+                        
+                            
+                        
+                    
+                        
+                            
+                            <a href="projects"><li>projects</li></a>
+                            
+                        
+                    
+                    
+                        
+                            <a href="127.0.0.1/127.0.0.1/about/"><li>About</li></a>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="https://github.com/bowwowxx" target="_blank">
+                <i class="icon ion-social-github"></i>
+            </a>
+        
+
+        
+            <a href="#" target="_blank">
+                <i class="icon ion-social-twitter"></i>
+            </a>
+        
+
+        
+            <a href="#" target="_blank">
+                <i class="icon ion-social-linkedin"></i>
+            </a>
+        
+
+        
+            <a href="mailto:jummykimo@gmail.com">
+                <i class="icon ion-ios-email larger"></i>
+            </a>
+        
+
+        
+            <a href="127.0.0.1/index.xml">
+                <i class="icon ion-social-rss larger"></i>
+            </a>
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    How To Install Elasticsearch on Ubuntu 14.04
+
+</div>
+
+                </div>
+                <div class="meta">
+                    <div class="date" title="Fri Jan 1 2016 00:00:00 UTC">Jan 1, 2016</div>
+                    <div class="reading-time"><div class="middot"></div>1 minute read</div>
+                </div>
+            </div>
+            <div class="markdown">
+                
+
+<p>最近測東西，都用整理好的docker Elasticsearch叢集<br />
+有點忘了之前Elasticsearch建置方式<br />
+補貼上去年建的Elasticsearch步驟當備忘用</p>
+
+<h4 id="1-install-java">1. Install Java</h4>
+
+<p>官方是說<br />
+[Elasticsearch recommends Oracle JDK version 1.8.0_73]</p>
+
+<p>這邊可以使用OpenJDK 7或Oracle JDK 8</p>
+
+<p>OpenJDK 7</p>
+
+<pre><code>sudo apt-get update  
+sudo apt-get install openjdk-7-jre  
+java -version  
+
+</code></pre>
+
+<p>Oracle JDK 8</p>
+
+<pre><code>sudo add-apt-repository -y ppa:webupd8team/java  
+sudo apt-get update    
+sudo apt-get -y install oracle-java8-installer   
+java -version  
+</code></pre>
+
+<p><img src="https://goo.gl/9wVhs1" width="100%">
+<img src="https://goo.gl/q0QMGs" width="100%"></p>
+
+<h4 id="2-installing-elasticsearch-1-7-2">2. Installing Elasticsearch 1.7.2</h4>
+
+<pre><code>sudo wget https://download.elastic.co/Elasticsearch/Elasticsearch/Elasticsearch-1.7.2.deb  
+sudo dpkg -i Elasticsearch-1.7.2.deb  
+</code></pre>
+
+<p><img src="https://goo.gl/eW9sxo" width="100%">
+<img src="https://goo.gl/iFfmPo" width="100%"></p>
+
+<h4 id="3-installing-plugin">3. Installing plugin</h4>
+
+<ul>
+<li>head<br />
+<code>
+sudo /usr/share/Elasticsearch/bin/plugin -install mobz/Elasticsearch-head  
+</code></li>
+<li>marvel<br />
+<code>
+sudo /usr/share/Elasticsearch/bin/plugin -install Elasticsearch/marvel/latest  
+</code><br /></li>
+<li>jdbc river<br />
+版本參考
+<a href="http://xbib.org/repository/org/xbib/Elasticsearch/plugin/Elasticsearch-river-jdbc/">http://xbib.org/repository/org/xbib/Elasticsearch/plugin/Elasticsearch-river-jdbc/</a><br />
+<code>
+plugin --install jdbc --url http://xbib.org/repository/org/xbib/Elasticsearch/plugin/Elasticsearch-river-jdbc/1.5.0.5/Elasticsearch-river-jdbc-1.5.0.5-plugin.zip  
+</code></li>
+<li>jdbc postgresql<br />
+版本參考列表<br />
+<a href="https://jdbc.postgresql.org/download.html">https://jdbc.postgresql.org/download.html</a><br />
+<a href="https://github.com/jprante/Elasticsearch-jdbc">https://github.com/jprante/Elasticsearch-jdbc</a><br /></li>
+</ul>
+
+<pre><code>wget https://jdbc.postgresql.org/download/postgresql-9.4-1204.jdbc4.jar
+wget https://jdbc.postgresql.org/download/postgresql-9.4-1204.jdbc42.jar
+/usr/share/Elasticsearch/plugins/jdbc  
+</code></pre>
+
+<p><img src="https://goo.gl/moyQVm" width="100%"></p>
+
+<h4 id="4-configuring-elasticsearch">4. Configuring Elasticsearch</h4>
+
+<p>一些Elasticsearch檔案路徑<br />
+- /usr/share/Elasticsearch<br />
+- /etc/Elasticsearch<br />
+- /etc/init.d/Elasticsearch</p>
+
+<pre><code>sudo update-rc.d Elasticsearch defaults  
+
+</code></pre>
+
+<p><img src="https://goo.gl/1xZljC" width="100%"></p>
+
+<p>設定Elasticsearch.yml檔</p>
+
+<pre><code>sudo nano /etc/Elasticsearch/Elasticsearch.yml  
+</code></pre>
+
+<p>參考內容:</p>
+
+<pre><code>marvel.agent.enabled: false
+cluster.name: bowwow
+node.name: pro-bowwow
+node.master: true
+node.data: true
+index.number_of_shards: 5
+bootstrap.mlockall: true
+index.cache.field.max_size: 50000
+index.cache.field.expire: 10m
+index.cache.field.type: soft
+threadpool.index.type: fixed
+threadpool.index.size: 100
+threadpool.index.queue_size: 500
+#discovery.zen.ping.multicast.enabled: false  
+#discovery.zen.ping.unicast.hosts: [&quot;pro-bowwow&quot;,&quot;node1&quot;,&quot;node2&quot;]
+
+th:
+data: /data/data
+logs: /data/log
+plugins: /data/plugins
+work: /data/work
+
+http.cors.allow-origin: &quot;/.*/&quot;
+http.cors.enabled: true
+</code></pre>
+
+<h4 id="5-設定完成">5. 設定完成</h4>
+
+<p>啟用服務嘍</p>
+
+<pre><code>sudo service Elasticsearch start  
+</code></pre>
+
+<p>測試一下</p>
+
+<pre><code>curl localhost:9200
+</code></pre>
+
+<p><img src="https://goo.gl/tod19x" width="100%"></p>
+
+<p>從db建一些測試資料進去<br />
+<img src="https://goo.gl/zOb2kc" width="100%">
+<img src="https://goo.gl/CeMO7g" width="100%"></p>
+
+<p>測一下7萬筆資料內搜尋的效能</p>
+
+<pre><code>ab -n 1000 -c 10  &quot;http://demo/songs/data/_search?&amp;q=id:100&quot;
+</code></pre>
+
+<p>嗯~~測了一下，從數千筆資料搜尋和從7萬多筆資料搜尋，Requests per second數差不多<br />
+<img src="https://goo.gl/rgIRYy" width="100%"></p>
+
+<p><strong>收工嘍~收工嘍~</strong></p>
+
+                <br>
+                <p><a href="post">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'bowwowtips';
+    var disqus_identifier = '\/127.0.0.1\/post\/20160101\/';
+    var disqus_title = 'How To Install Elasticsearch on Ubuntu 14.04';
+    var disqus_url = '\/127.0.0.1\/post\/20160101\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            <br>
+            <div class="ga">
+            
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-78436139-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+</body>
+</html>
+
