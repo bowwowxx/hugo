@@ -26,9 +26,10 @@ blog用久了其實就會一直想移出來自已架blog
 那時試架了wordpress、nodejs的ghost  
 評估後覺的ghost很不賴    
 就自架了node-js ghost blog  
-> **bowwow:**     
+
+>  **bowwow:**     
 http://bowwowxx.github.io/ghblog/   
-<img src="https://goo.gl/sUFkhW" width="40%">
+<img src="https://goo.gl/VJbWUA" width="50%">
 
 架完ghost，版面也改的差不多了，就決定要用ghost blog  
 
@@ -36,12 +37,14 @@ http://bowwowxx.github.io/ghblog/
 安迪兒看到由Go語言編寫的Blog hugo(雨果)  
 稍為在本機試了一下，覺的很符合安迪兒的需求  
 就在2016年初時把安迪兒的Blog換成Hugo.  
-<img src="https://goo.gl/3fs2Gn" width="40%">
+
+> <img src="https://goo.gl/JB1VI1" width="50%">
 
 **2017年**  
 新的一年開始，升級Hugo至0.18  
 順便改版，新版面新氣象呀!  
-<img src="https://goo.gl/nfoKsK" width="40%">
+
+> <img src="https://goo.gl/JBLDAK" width="50%">  
 
 
-日後也請大家多多指教嘍!  
+#### 日後也請大家多多指教嘍!  
