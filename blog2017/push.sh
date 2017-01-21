@@ -1,5 +1,6 @@
 #!/bin/sh
 ./hugo_0.18.1 --theme=cocoa-eh --baseUrl="https://bowwow.tips"
+cp ./CNAME ./public/
 info="update blog at `date`"
 git --git-dir=$PWD/public/.git --work-tree=$PWD/public pull
 git add . && git commit -am "$info" && git push origin dev
